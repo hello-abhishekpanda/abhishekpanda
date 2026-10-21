@@ -49,8 +49,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
+        <script dangerouslySetInnerHTML={{ __html: `try{const theme=localStorage.getItem('ap-theme');if(theme==='light'||theme==='dark'){document.documentElement.dataset.theme=theme;document.documentElement.classList.toggle('dark',theme==='dark')}}catch{}` }} />
         {children}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",

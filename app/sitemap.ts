@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next';
 const base = 'https://www.abhishekpanda.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ['', '/guide', '/blogs', '/contact'];
+  const pages = ['', '/blogs', '/contact'];
   const learningPages = [
     '/learning/index.html',
     '/learning/ai-solution-architect-curriculum.html',

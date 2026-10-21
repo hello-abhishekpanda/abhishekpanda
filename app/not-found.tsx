@@ -18,7 +18,7 @@ export default function NotFound() {
         <p>The page may have moved or the address may be incorrect. Choose a destination below to continue exploring.</p>
         <div className="not-found-actions">
           <Link className="btn primary" href="/"><ArrowLeft size={16}/> Portfolio home</Link>
-          <Link className="btn secondary" href="/guide"><Compass size={16}/> Learning guide</Link>
+          <Link className="btn secondary" href="/learning/ai-solution-architect-curriculum.html"><Compass size={16}/> Learning guide</Link>
           <Link className="not-found-blog" href="/blogs">Read the blog <ArrowUpRight size={15}/></Link>
         </div>
       </div>

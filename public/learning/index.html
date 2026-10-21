@@ -77,5 +77,5 @@ slideButtons.forEach(button=>button.addEventListener('click',()=>{showScene(Numb
 const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');function restartSceneTimer(){window.clearInterval(sceneTimer);if(!reducedMotion.matches&&!visualCard.matches(':hover')&&!visualCard.contains(document.activeElement))sceneTimer=window.setInterval(()=>showScene((currentScene+1)%heroScenes.length),6500)}
 visualCard.addEventListener('mouseenter',()=>window.clearInterval(sceneTimer));visualCard.addEventListener('mouseleave',restartSceneTimer);visualCard.addEventListener('focusin',()=>window.clearInterval(sceneTimer));visualCard.addEventListener('focusout',event=>{if(!visualCard.contains(event.relatedTarget))restartSceneTimer()});reducedMotion.addEventListener?.('change',restartSceneTimer);restartSceneTimer();
 </script>
-</body>
+<script src="site-shell.js"></script></body>
 </html>

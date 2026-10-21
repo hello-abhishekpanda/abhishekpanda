@@ -19,40 +19,36 @@ import {
   GitBranch,
   Home,
   Mail,
+  Menu,
   MapPin,
+  Moon,
   Network,
-  PanelLeftClose,
   ShieldCheck,
+  Sun,
   Wrench,
+  X,
 } from 'lucide-react';
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarProvider,
-  SidebarTrigger,
-  useSidebar,
-} from '@/components/ui/sidebar';
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import BlogCatalog, { type BlogPost } from './blog-catalog';
 import ContactPage from './contact-page';
 import { history, projects, skills, social } from './data';
 import Emphasis from './emphasis';
-import GuideHub from './guide-hub';
 import logos from './logos.json';
 import postsData from './posts.json';
 import techIcons from './tech-icons.json';
 
 const nav = [
-  ['home', 'Home', Home],
-  ['guide', 'Guide', BookMarked],
-  ['blogs', 'Blogs', BookOpen],
-  ['contact', 'Contact', Mail],
+  ['home', 'Home', Home, '/'],
+  ['guide', 'Guide', BookMarked, '/learning/ai-solution-architect-curriculum.html'],
+  ['blogs', 'Blogs', BookOpen, '/blogs'],
+  ['contact', 'Contact', Mail, '/contact'],
 ] as const;
+
+const pageContext = {
+  home: ['Portfolio', 'Experience, architecture, and production AI systems'],
+  blogs: ['Blogs', 'Engineering notes, architecture, and applied AI'],
+  contact: ['Contact', 'Start a conversation about AI and cloud architecture'],
+} as const;
 
 const blogPosts = postsData as BlogPost[];
 
@@ -98,31 +94,33 @@ function Social() {
   );
 }
 
-function pathFromPage(page: string) {
-  return page === 'home' ? '/' : `/${page}`;
-}
-
 function pageFromPath(pathname: string) {
   return pathname.replace(/^\/+|\/+$/g, '') || 'home';
 }
 
-function Navigation({ page }: { page: string }) {
-  const { setOpenMobile } = useSidebar();
-  const colors = ['#bd123b', '#7652b8', '#e07031', '#209889'];
-
+function Navigation({ page, onNavigate, mobile = false }: { page: string; onNavigate?: () => void; mobile?: boolean }) {
   return (
-    <SidebarMenu>
-      {nav.map(([id, label, Icon], index) => (
-        <SidebarMenuItem key={id} style={{ '--nav-icon-color': colors[index] } as React.CSSProperties}>
-          <SidebarMenuButton asChild className="navitem" isActive={page === id} tooltip={label}>
-            <Link href={pathFromPage(id)} onClick={() => setOpenMobile(false)}>
-              <Icon />
-              <span>{label}</span>
-            </Link>
-          </SidebarMenuButton>
-        </SidebarMenuItem>
+    <nav className={mobile ? 'header-nav header-nav-mobile' : 'header-nav'} aria-label={mobile ? 'Mobile navigation' : 'Primary navigation'}>
+      {nav.map(([id, label, Icon, href]) => id === 'guide' ? (
+        <details className="guide-nav-menu" key={id}>
+          <summary className="header-nav-link" aria-label="Open guide navigation">
+            <Icon aria-hidden="true" />
+            <span>{label}</span>
+            <ChevronDown className="guide-nav-chevron" aria-hidden="true" />
+          </summary>
+          <div className="guide-nav-popover">
+            <a href={href} onClick={onNavigate}><BookOpen aria-hidden="true" /><span><strong>AI / ML curriculum</strong><small>Architecture learning path</small></span></a>
+            <a href="/learning/azure-services.html" onClick={onNavigate}><Cloud aria-hidden="true" /><span><strong>Azure services</strong><small>Microsoft cloud guide</small></span></a>
+            <a href="/learning/aws-services.html" onClick={onNavigate}><Network aria-hidden="true" /><span><strong>AWS services</strong><small>Amazon cloud guide</small></span></a>
+          </div>
+        </details>
+      ) : (
+        <Link className="header-nav-link" data-active={page === id || undefined} href={href} key={id} onClick={onNavigate}>
+          <Icon aria-hidden="true" />
+          <span>{label}</span>
+        </Link>
       ))}
-    </SidebarMenu>
+    </nav>
   );
 }
 
@@ -179,6 +177,25 @@ function Brand({ name, id }: { name: string; id: string }) {
         }}
       />
       <span hidden>{name}</span>
+    </div>
+  );
+}
+
+function journeyLogoId(name: string, fallback: string) {
+  if (/hiscox/i.test(name)) return 'hiscox';
+  if (/dell/i.test(name)) return 'dell';
+  if (/qatar/i.test(name)) return 'qatar';
+  if (/citi/i.test(name)) return 'citi';
+  if (/metlife/i.test(name)) return 'metlife';
+  if (/bank of america|merrill/i.test(name)) return 'boa';
+  return fallback;
+}
+
+function JourneyClientLogos({ client, company, fallbackId }: { client: string; company: string; fallbackId: string }) {
+  const names = client ? client.split('·').map((name) => name.trim()) : [company];
+  return (
+    <div className="journey-client-logos" aria-label={client ? `Client: ${client}` : `Product team: ${company}`} title={client || company}>
+      {names.slice(0, 2).map((name) => <Brand key={name} name={name} id={journeyLogoId(name, fallbackId)} />)}
     </div>
   );
 }
@@ -244,7 +261,7 @@ function HomePage({ expandedCompanies, toggleCompany }: { expandedCompanies: str
                       <span className="career-company-copy"><strong>{item.company}</strong><small>{item.role}</small></span>
                       <ChevronDown className="company-toggle-chevron" size={18} />
                     </button>
-                    <span className="chapter">{String(index + 1).padStart(2, '0')}</span>
+                    <div className="experience-card-meta"><JourneyClientLogos client={item.client} company={item.company} fallbackId={item.logo} /><span className="chapter">{String(index + 1).padStart(2, '0')}</span></div>
                   </div>
                   <div className="experience-details" id={`career-details-${index}`} hidden={!expanded}>
                     <div className="project-line">{item.client && <span className="client-pill">{item.client}</span>}<span>{item.project}</span></div>
@@ -290,7 +307,7 @@ function HomePage({ expandedCompanies, toggleCompany }: { expandedCompanies: str
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" id="expertise">
         <div className="section-title"><div><div className="eyebrow">THE FULL STACK</div><h2>From the model to the mission.</h2></div></div>
         <div className="skills-grid">{skills.map(([title, tech], index) => <article className={`skill-card${title.startsWith('Azure Cloud & AI') ? ' skill-card-primary' : ''}`} key={title}><span className="skill-number">{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><Capsules text={tech} /></article>)}</div>
       </section>
@@ -302,42 +319,103 @@ function HomePage({ expandedCompanies, toggleCompany }: { expandedCompanies: str
 export default function Portfolio() {
   const pathname = usePathname();
   const page = pageFromPath(pathname);
-  const [open, setOpen] = useState(false);
-  const [pinned, setPinned] = useState(false);
+  const [pageLabel, pageDescription] = pageContext[page as keyof typeof pageContext] || pageContext.home;
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedCompanies, setExpandedCompanies] = useState<string[]>([]);
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    if (typeof window === 'undefined') return 'light';
+    const savedTheme = window.localStorage.getItem('ap-theme');
+    if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
 
-  useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [pathname]);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  }, [theme]);
+
+  function toggleTheme() {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+    window.localStorage.setItem('ap-theme', nextTheme);
+    document.documentElement.dataset.theme = nextTheme;
+    document.documentElement.classList.toggle('dark', nextTheme === 'dark');
+  }
 
   function toggleCompany(company: string) {
     setExpandedCompanies((current) => current.includes(company) ? current.filter((name) => name !== company) : [...current, company]);
   }
 
-  const content = page === 'guide'
-    ? <GuideHub />
-    : page === 'blogs'
-      ? <BlogCatalog posts={blogPosts} substackUrl={social.substack} />
-      : page === 'contact'
-        ? <ContactPage />
-        : <HomePage expandedCompanies={expandedCompanies} toggleCompany={toggleCompany} />;
+  const content = page === 'blogs'
+    ? <BlogCatalog posts={blogPosts} substackUrl={social.substack} />
+    : page === 'contact'
+      ? <ContactPage />
+      : <HomePage expandedCompanies={expandedCompanies} toggleCompany={toggleCompany} />;
 
   return (
-    <SidebarProvider open={open || pinned} onOpenChange={setPinned} style={{ '--sidebar-width': '15rem', '--sidebar-width-icon': '5.3rem' } as React.CSSProperties}>
-      <Sidebar collapsible="icon" className="navrail" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-        <SidebarHeader><Link className="site-mark" href="/" aria-label="Abhishek Panda home"><img src="/brand.png" alt="AP" /><span>Abhishek Panda<span className="small-sub">Architect & builder</span></span></Link></SidebarHeader>
-        <SidebarContent><Navigation page={page} /></SidebarContent>
-        <SidebarFooter>
-          <SidebarMenuButton className="navitem" tooltip="Pin navigation" onClick={() => setPinned(!pinned)}><PanelLeftClose /><span>{pinned ? 'Collapse navigation' : 'Pin navigation'}</span></SidebarMenuButton>
-          <Link className="rail-profile" href="/contact" aria-label="Contact Abhishek Panda"><img src="/profile.png" alt="Abhishek Panda" /><span>Abhishek Panda<small>Available to connect</small></span><ArrowUpRight size={15} /></Link>
-        </SidebarFooter>
-      </Sidebar>
-      <main className="main">
+    <TooltipProvider delayDuration={100}>
+      <div className="site-shell">
         <header className="topbar">
-          <div className="breadcrumb"><SidebarTrigger className="mobile-trigger" /><span>Abhishek Panda</span><span className="slash">/</span><span>{nav.find(([id]) => id === page)?.[1] || 'Home'}</span></div>
-          <a href={social.email} className="contact-top">Let’s talk <ArrowUpRight size={16} /></a>
+          <div className="topbar-inner">
+            <Link className="header-brand" href="/" aria-label="Abhishek Panda home">
+              <img src="/profile.png" alt="" />
+              <span>Abhishek Panda<small>Enterprise AI Solution Architect</small></span>
+            </Link>
+            <Navigation page={page} />
+            <div className="header-actions">
+              <button className="theme-switch" type="button" onClick={toggleTheme} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`} title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}>
+                {theme === 'dark' ? <Sun aria-hidden="true" /> : <Moon aria-hidden="true" />}
+                <span>{theme === 'dark' ? 'Light' : 'Dark'}</span>
+              </button>
+              <a href={social.email} className="contact-top">Let’s talk <ArrowUpRight size={16} /></a>
+              <button
+                className="menu-toggle"
+                type="button"
+                aria-controls="mobile-navigation"
+                aria-expanded={mobileMenuOpen}
+                aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                onClick={() => setMobileMenuOpen((current) => !current)}
+              >
+                {mobileMenuOpen ? <X /> : <Menu />}
+              </button>
+            </div>
+          </div>
+          <div className="header-context-bar">
+            <span className="header-page-label"><i />{pageLabel}</span>
+            <span>{pageDescription}</span>
+            {page === 'home' && <nav aria-label="On this page"><a href="#experience">Experience</a><a href="#expertise">Expertise</a></nav>}
+          </div>
+          <div className="mobile-navigation" id="mobile-navigation" hidden={!mobileMenuOpen}>
+            <Navigation page={page} mobile onNavigate={() => setMobileMenuOpen(false)} />
+            <button className="theme-switch mobile-theme-switch" type="button" onClick={toggleTheme}>
+              {theme === 'dark' ? <Sun aria-hidden="true" /> : <Moon aria-hidden="true" />}
+              Use {theme === 'dark' ? 'light' : 'dark'} theme
+            </button>
+            <a href={social.email} className="mobile-contact" onClick={() => setMobileMenuOpen(false)}>Start a conversation <ArrowUpRight size={16} /></a>
+          </div>
         </header>
-        {content}
-        <footer><div><strong>Let’s build something meaningful.</strong><a href={social.email}>hello@abhishekpanda.com <ArrowUpRight size={17} /></a></div><Social /><span>© {new Date().getFullYear()} Abhishek Panda</span></footer>
-      </main>
-    </SidebarProvider>
+        <main className="main">
+          {content}
+          <footer className="site-footer">
+            <div className="site-footer-top">
+              <div className="site-footer-profile"><img src="/profile.png" alt="Abhishek Panda" /><span><strong>Abhishek Panda</strong><small>Enterprise AI Solution Architect · Bengaluru, India</small></span></div>
+              <nav className="site-footer-nav" aria-label="Footer navigation">
+                {nav.map(([id, label, , href]) => id === 'guide' ? <a href={href} key={id}>{label}</a> : <Link href={href} key={id}>{label}</Link>)}
+              </nav>
+            </div>
+            <div className="site-footer-bottom"><span>© {new Date().getFullYear()} Abhishek Panda</span><Social /><a href={social.email}>hello@abhishekpanda.com <ArrowUpRight size={15} /></a></div>
+          </footer>
+        </main>
+      </div>
+    </TooltipProvider>
   );
 }

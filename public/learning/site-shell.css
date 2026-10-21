@@ -1,0 +1,32 @@
+body>header.header,
+body>header.topbar,
+body>header.nav,
+body>nav.nav,
+body>div.nav,
+footer.footer,
+body>.footer,
+body>a[style*="position:fixed"],
+body>div[style*="position:fixed"] {
+  display: none !important;
+}
+
+html {
+  scroll-padding-top: 132px;
+}
+
+@media (min-width: 761px) {
+  .side,
+  .side-nav,
+  .toc,
+  .learning-rail {
+    top: 142px !important;
+    max-height: calc(100vh - 164px) !important;
+  }
+}
+
+@media print {
+  ap-site-header,
+  ap-site-footer {
+    display: none !important;
+  }
+}

@@ -116,4 +116,4 @@ const storage='dlh-ch01-tasks';const saved=JSON.parse(localStorage.getItem(stora
 const anchors=[...document.querySelectorAll('.toc a')];function reading(){const sections=[...document.querySelectorAll('section.section, section.hero')];let active=sections[0];sections.forEach(s=>{if(s.getBoundingClientRect().top<180)active=s});anchors.forEach(a=>a.classList.toggle('active',a.hash==='#'+active.id));$('readingProgress').style.width=Math.max(3,(sections.indexOf(active)+1)/sections.length*100)+'%'}document.addEventListener('scroll',reading,{passive:true});reading();
 // Show honest navigation behavior for the not-yet-created chapter.
 $('nextChapter').addEventListener('click',e=>{if(!localStorage.getItem('dlh-ch02-published')){e.preventDefault();alert('Chapter 2 is not yet published as an HTML file. The homepage contains its full syllabus.')}});
-</script></body></html>
+</script><script src="site-shell.js"></script></body></html>

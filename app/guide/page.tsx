@@ -1,10 +1,5 @@
-import type { Metadata } from 'next';
-import PortfolioRoute from '../portfolio-route';
+import { redirect } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'AI, Deep Learning & Cloud Guides',
-  description: 'Visual, practical guides for AI, deep learning, Azure, AWS, and production architecture by Abhishek Panda.',
-  alternates: { canonical: '/guide' },
-};
-
-export default PortfolioRoute;
+export default function GuidePage() {
+  redirect('/learning/ai-solution-architect-curriculum.html');
+}
