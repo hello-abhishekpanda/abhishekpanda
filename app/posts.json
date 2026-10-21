@@ -1,0 +1,982 @@
+[
+  {
+    "date": "Sep 23, 2026",
+    "description": "Why understanding the data comes before building the model",
+    "image": "https://substackcdn.com/image/fetch/$s_!9Ic_!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb133b237-6ffc-4a0f-b9b3-02d4295dbb43_1672x941.png",
+    "title": "EDA & Feature Engineering: From Raw Data to Model-Ready Intelligence",
+    "url": "https://stackedin.substack.com/p/eda-and-feature-engineering",
+    "tags": [
+      "Data & Analytics"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 23, 2026",
+    "description": "From Excel, SQL & Power BI to Senior Analyst, Analytics Lead and AI-Native Decision Intelligence — without accidentally becoming a Data Engineer",
+    "image": "https://substackcdn.com/image/fetch/$s_!Ku0O!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F65e74202-35e1-4e87-ae11-836c42b669c2_1672x941.png",
+    "title": "Data Analyst Mastery - Part 1 ",
+    "url": "https://stackedin.substack.com/p/data-analyst-mastery-part-1",
+    "tags": [
+      "Data & Analytics"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 21, 2026",
+    "description": "PostgreSQL & Business Data",
+    "image": "https://substackcdn.com/image/fetch/$s_!SJhz!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd138c2bd-a4c6-4d75-831d-c4c2ff14e166_1672x941.png",
+    "title": "n8n Masterclass Part 9",
+    "url": "https://stackedin.substack.com/p/n8n-masterclass-part-9",
+    "tags": [
+      "Workflows"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 21, 2026",
+    "description": "Credentials, API Keys & OAuth",
+    "image": "https://substackcdn.com/image/fetch/$s_!hXIf!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F61ee0d13-ff72-492d-b551-663fc48cbc3d_1672x941.png",
+    "title": "n8n Masterclass Part 8",
+    "url": "https://stackedin.substack.com/p/n8n-masterclass-part-8",
+    "tags": [
+      "Workflows"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 21, 2026",
+    "description": "Loops, Batches & Pagination",
+    "image": "https://substackcdn.com/image/fetch/$s_!JtjT!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1d057e89-e632-4071-b8d9-e9229df5ab19_1672x941.png",
+    "title": "n8n Masterclass Part 7",
+    "url": "https://stackedin.substack.com/p/n8n-masterclass-part-7",
+    "tags": [
+      "Workflows"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 21, 2026",
+    "description": "IF, Switch, Merge & Business Decision Logic",
+    "image": "https://substackcdn.com/image/fetch/$s_!mv6f!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae656613-3785-4025-9750-8d52d7d64714_1672x941.png",
+    "title": "n8n Masterclass Part 6",
+    "url": "https://stackedin.substack.com/p/n8n-masterclass-part-6",
+    "tags": [
+      "Workflows"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 21, 2026",
+    "description": "HTTP Request Node & REST API Masterclass",
+    "image": "https://substackcdn.com/image/fetch/$s_!ckvn!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9f148b0b-536e-49da-b5b0-a4d6512c0809_1672x941.png",
+    "title": "n8n Masterclass Part 5",
+    "url": "https://stackedin.substack.com/p/n8n-masterclass-part-5",
+    "tags": [
+      "Workflows"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 21, 2026",
+    "description": "Triggers, Webhooks & Building Your First Real HTTP Workflow",
+    "image": "https://substackcdn.com/image/fetch/$s_!XDBi!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9249dd16-17fb-449c-9abc-1843984be9d3_1672x941.png",
+    "title": "n8n Masterclass Part 4",
+    "url": "https://stackedin.substack.com/p/n8n-masterclass-part-4",
+    "tags": [
+      "Workflows"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 21, 2026",
+    "description": "Mastering Expressions & Dynamic Data",
+    "image": "https://substackcdn.com/image/fetch/$s_!5QXA!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F60da6fc1-2ad5-492c-8b2f-918f0a91ed97_1672x941.png",
+    "title": "n8n Masterclass - Make Your n8n Workflows Truly Dynamic : Part 3",
+    "url": "https://stackedin.substack.com/p/n8n-masterclass-part-3",
+    "tags": [
+      "Workflows"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 21, 2026",
+    "description": "Understanding the n8n UI, Nodes, Executions, JSON, Items & Data Flow",
+    "image": "https://substackcdn.com/image/fetch/$s_!yFKM!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6b9217f1-02ae-43dc-915d-118d0dbe441d_1672x941.png",
+    "title": "n8n Masterclass Part 2",
+    "url": "https://stackedin.substack.com/p/n8n-masterclass-part-2",
+    "tags": [
+      "Workflows"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 21, 2026",
+    "description": "Install n8n Locally with Docker + PostgreSQL",
+    "image": "https://substackcdn.com/image/fetch/$s_!7c62!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc37133bf-8f83-4787-bd70-8b7328a42689_1672x941.png",
+    "title": "n8n Masterclass Part 1",
+    "url": "https://stackedin.substack.com/p/n8n-masterclass-part-1",
+    "tags": [
+      "Workflows"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 21, 2026",
+    "description": "Automation, Workflows, Orchestration & How n8n Fits In",
+    "image": "https://substackcdn.com/image/fetch/$s_!tPkx!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd4aa8eb5-d41a-4670-9ed3-142b4cea3fca_1672x941.png",
+    "title": "n8n Masterclass - Part 0",
+    "url": "https://stackedin.substack.com/p/n8n-masterclass-part-0",
+    "tags": [
+      "Workflows"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 21, 2026",
+    "description": "From Workflow Automation to Production-Grade AI Agents, Durable Systems & Enterprise Platforms",
+    "image": "https://substackcdn.com/image/fetch/$s_!d60V!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9bd0a968-29f5-4a88-8976-9488beb5bc0c_1672x941.png",
+    "title": "Enterprise AI Automation & Agentic Systems Engineering - 1",
+    "url": "https://stackedin.substack.com/p/enterprise-ai-automation-workflows",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 19, 2026",
+    "description": "From Cloud Fundamentals to Enterprise Multi-Cloud & AI Architecture — Azure, AWS, Google Cloud (GCP)",
+    "image": "https://substackcdn.com/image/fetch/$s_!8Ff1!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc5b16432-5f50-409b-a0d5-e1c9aa1c2c22_1983x793.png",
+    "title": " Azure | AWS | GCP - Cloud & AI Architecture Masterclass",
+    "url": "https://stackedin.substack.com/p/azure-aws-gcp-cloud-ai-architecture",
+    "tags": [
+      "Azure",
+      "Cloud",
+      "Architecture"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 18, 2026",
+    "description": "GitHub Actions CI/CD + Structured Logs + Loki + Grafana + MLflow Tracing",
+    "image": "https://substackcdn.com/image/fetch/$s_!yAN4!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F78276cfe-8ce3-4822-8fa7-ce23d0c765b4_1672x941.png",
+    "title": "MLflow 3 + PayFlow AI — Part 8",
+    "url": "https://stackedin.substack.com/p/mlflow-3-payflow-ai-part-8",
+    "tags": [
+      "MLOps"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 17, 2026",
+    "description": "PostgreSQL + MinIO + Docker Compose: Build the Self-Hosted MLOps Stack",
+    "image": "https://substackcdn.com/image/fetch/$s_!O6fp!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe3b202b7-4523-4692-8c85-056368c8e275_1672x941.png",
+    "title": "MLflow 3 + PayFlow AI — Part 7",
+    "url": "https://stackedin.substack.com/p/mlflow-3-payflow-ai-part-7",
+    "tags": [
+      "MLOps"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 17, 2026",
+    "description": "MLflow Serving + Production FastAPI",
+    "image": "https://substackcdn.com/image/fetch/$s_!B1-S!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc0296f7e-f808-493c-9149-f50e5ba3fdf4_1491x1055.png",
+    "title": "MLflow 3 + PayFlow AI — Part 6",
+    "url": "https://stackedin.substack.com/p/mlflow-3-payflow-ai-part-6",
+    "tags": [
+      "MLOps"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 17, 2026",
+    "description": "Model Registry, Versions, Champion & Challenger",
+    "image": "https://substackcdn.com/image/fetch/$s_!uvbY!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffb4d60d5-ddae-443a-aaa1-8ac3261723cc_1672x941.png",
+    "title": "MLflow 3 + PayFlow AI — Part 5",
+    "url": "https://stackedin.substack.com/p/mlflow-3-payflow-ai-part-5",
+    "tags": [
+      "MLOps"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 17, 2026",
+    "description": "Model Evaluation & Production Quality Gates",
+    "image": "https://substackcdn.com/image/fetch/$s_!Y86U!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcec604f7-4d7c-4b9e-b9f9-f09a49a2d369_1672x941.png",
+    "title": "MLflow 3 + PayFlow AI — Part 4",
+    "url": "https://stackedin.substack.com/p/mlflow-3-payflow-ai-part-4",
+    "tags": [
+      "MLOps"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 17, 2026",
+    "description": "Scale the Experiment: Random Forest, XGBoost, Run Comparison & MLflow Autologging",
+    "image": "https://substackcdn.com/image/fetch/$s_!jITf!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffb110068-5252-492d-92ef-1f8ba70896c0_1672x941.png",
+    "title": "MLflow 3 + PayFlow AI — Part 3",
+    "url": "https://stackedin.substack.com/p/mlflow-3-payflow-ai-part-3",
+    "tags": [
+      "MLOps"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 16, 2026",
+    "description": "Build Our First Real ML Experiment: Payment Success Prediction",
+    "image": "https://substackcdn.com/image/fetch/$s_!GyJz!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3fbcb33b-7997-4199-a17d-00bcc04d3763_1672x941.png",
+    "title": "MLflow 3 + PayFlow AI — Part 2",
+    "url": "https://stackedin.substack.com/p/mlflow-3-payflow-ai-part-2",
+    "tags": [
+      "MLOps"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 16, 2026",
+    "description": "Build MLflow locally in VS Code, understand the Tracking Server architecture, connect the UPI Transactions 2024 dataset, and create our first reproducible experiment step by step.",
+    "image": "https://substackcdn.com/image/fetch/$s_!-jAA!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F26acd4cf-7d12-422d-8c35-c2d9a2acbcb6_1672x941.png",
+    "title": "MLflow 3 from Scratch : Part 1",
+    "url": "https://stackedin.substack.com/p/mlflow-3-from-scratch-architecture",
+    "tags": [
+      "MLOps"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 16, 2026",
+    "description": "Build an End-to-End Customer Churn MLOps Platform",
+    "image": "https://substackcdn.com/image/fetch/$s_!IIDJ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd9473065-1b9d-4036-9bb5-fc06e15afedc_1672x941.png",
+    "title": "MLflow 3 — From Experiment to Production ",
+    "url": "https://stackedin.substack.com/p/mlflow-3-from-experiment-to-production",
+    "tags": [
+      "MLOps"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 15, 2026",
+    "description": "From Text Prompts to Pixels: Understanding How AI Creates Images",
+    "image": "https://substackcdn.com/image/fetch/$s_!88_M!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff27e5ed6-2775-4bcc-a358-e2d658d65ba7_1774x887.png",
+    "title": "Part 1 — Image Generation Fundamentals",
+    "url": "https://stackedin.substack.com/p/part-1-image-generation-fundamentals",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 15, 2026",
+    "description": "From Open-Source Foundation Models to Fine-Tuned Production AI",
+    "image": "https://substackcdn.com/image/fetch/$s_!Whgg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F03addfbd-1af0-47ee-a043-3110c1253ca5_1536x1024.png",
+    "title": "AI Image Generation :A Complete Hands-On Journey from Diffusion Theory to Enterprise-Grade Image Generation APIs",
+    "url": "https://stackedin.substack.com/p/ai-image-generation-hands-on-lab-1",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 14, 2026",
+    "description": "From Empty VS Code Workspace to a Deployed Azure Workflow",
+    "image": "https://substackcdn.com/image/fetch/$s_!-hZ4!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9a1da3ff-1c12-4311-bee8-ca0a76290d45_1536x1024.png",
+    "title": "Part 2 — Azure Logic Apps × .NET 10",
+    "url": "https://stackedin.substack.com/p/part-2-azure-logic-apps-net-10",
+    "tags": [
+      ".NET",
+      "Azure",
+      "Workflows"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 14, 2026",
+    "description": "Azure Logic Apps: The Complete Mental Model Before You Build Anything",
+    "image": "https://substackcdn.com/image/fetch/$s_!lyP_!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3328470a-88b6-49f0-8359-4bfd42ab59ee_1536x1024.png",
+    "title": "Azure Logic Apps: The Complete Mental Model Before You Build Anything",
+    "url": "https://stackedin.substack.com/p/azure-logic-apps",
+    "tags": [
+      "Azure",
+      "Workflows"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 13, 2026",
+    "description": "Create the Right Object Without Coupling Your Business Logic to Concrete Classes",
+    "image": "https://substackcdn.com/image/fetch/$s_!4Eof!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe868661c-2771-47a1-9cb8-bdcaed6b2d02_1672x941.png",
+    "title": "Factory Method Pattern : in Modern .NET 10 & C# 14",
+    "url": "https://stackedin.substack.com/p/factory-method-pattern-in-modern",
+    "tags": [
+      ".NET"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 12, 2026",
+    "description": "One Instance, One Shared Resource — Classic Singleton vs AddSingleton in Real .NET Applications",
+    "image": "https://substackcdn.com/image/fetch/$s_!HpdG!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6fb800b5-9e10-4ef4-bf93-fc569025b8f6_1672x941.png",
+    "title": "Singleton Pattern :  in Modern .NET 10 & C# 14",
+    "url": "https://stackedin.substack.com/p/singleton-pattern-in-modern-net-10",
+    "tags": [
+      ".NET"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 12, 2026",
+    "description": "The Foundation Before We Start Implementing Design Patterns in .NET 10 & C# 14",
+    "image": "https://substackcdn.com/image/fetch/$s_!b5A-!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4946387a-597f-4fdd-8df2-aa650df12643_1536x1024.png",
+    "title": "SOLID, Dependency Injection & Reading Real .NET Architecture",
+    "url": "https://stackedin.substack.com/p/solid-dependency-injection-and-reading",
+    "tags": [
+      ".NET",
+      "Architecture"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 12, 2026",
+    "description": "The Foundation You Need Before Learning Singleton, Factory, Strategy, Decorator, or Anything Else",
+    "image": "https://substackcdn.com/image/fetch/$s_!Zcfs!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc0f184aa-9556-43ef-95be-e8fa2dc16f92_1672x941.png",
+    "title": "Design Patterns in Modern .NET 10 & C# 14",
+    "url": "https://stackedin.substack.com/p/design-patterns-in-modern-net-10",
+    "tags": [
+      ".NET"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 11, 2026",
+    "description": "From BERT and GPT to Vision Transformers, Mixture-of-Experts, GQA, and modern LLMs — a practical guide to what Transformers are, why different types exist, and when each one is used.",
+    "image": "https://substackcdn.com/image/fetch/$s_!2LDr!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4085622c-fd34-47a0-85d6-58559a0142ef_1672x941.png",
+    "title": "Transformers Explained: The Architecture Behind Modern AI",
+    "url": "https://stackedin.substack.com/p/transformers-explained-the-architecture",
+    "tags": [
+      "Architecture"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 10, 2026",
+    "description": "Teaching PandaLM How to Read - Continuation of building An Open Foundational Small Language Model for Engineering...",
+    "image": "https://substackcdn.com/image/fetch/$s_!cFKe!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4fa50110-f636-4ba9-8b63-1316e004ae0d_1672x941.png",
+    "title": "🐼 PandaLM — Notebook 02",
+    "url": "https://stackedin.substack.com/p/pandalm-notebook-02",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 9, 2026",
+    "description": "Building the Training Corpus for a Foundational Engineering SLM",
+    "image": "https://substackcdn.com/image/fetch/$s_!Tp3M!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffd8f4931-bb2f-4714-8e14-34ce329939cb_1672x941.png",
+    "title": "🐼 PandaLM — Notebook 01",
+    "url": "https://stackedin.substack.com/p/pandalm-notebook-01",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 9, 2026",
+    "description": "Building the Laboratory for a Foundational Engineering SLM",
+    "image": "https://substackcdn.com/image/fetch/$s_!GKDx!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fff5613c6-11ca-42b0-a38f-b2c6b4568c5c_1672x941.png",
+    "title": "🐼 PandaLM — Notebook 00",
+    "url": "https://stackedin.substack.com/p/pandalm-notebook-00",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 9, 2026",
+    "description": "An Open Foundational Small Language Model for Engineering",
+    "image": "https://substackcdn.com/image/fetch/$s_!uk99!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdc0bd90a-534c-43b3-9f55-0db7e1825862_1536x1024.png",
+    "title": " PandaLM - An Open Foundational Small Language Model for Engineering",
+    "url": "https://stackedin.substack.com/p/pandalm",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 6, 2026",
+    "description": "From Enterprise RAG to an Enterprise Engineering Agent What → Why → How → Real Code → Business Scenarios → Security → Deployment",
+    "image": "https://substackcdn.com/image/fetch/$s_!0TPy!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7b31290c-3c63-4721-8c15-35c78d20eebc_1983x793.png",
+    "title": "Phase 3 — LangChain Agents, LangGraph, MCP & Production",
+    "url": "https://stackedin.substack.com/p/phase-3-langchain-agents-langgraph",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 6, 2026",
+    "description": "From Naive Vector Search to Secure, Observable, Evaluated Enterprise RAG",
+    "image": "https://substackcdn.com/image/fetch/$s_!fljT!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc0852121-2380-495b-b98d-501dd8ea19c9_1983x793.png",
+    "title": "LangChain- Phase 2 — Production Enterprise RAG with Sarvam AI",
+    "url": "https://stackedin.substack.com/p/langchain-phase-2-production-enterprise",
+    "tags": [
+      "RAG"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 6, 2026",
+    "description": "Models, Prompts, Structured Output, Runnables, Tools, Retrieval & Your First Enterprise RAG System",
+    "image": "https://substackcdn.com/image/fetch/$s_!lYQC!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd9b380bd-6085-48c1-b143-6b95894cf133_1959x803.png",
+    "title": "LangChain From Zero to Enterprise — Part 1",
+    "url": "https://stackedin.substack.com/p/langchain-from-zero-to-enterprise",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 4, 2026",
+    "description": "From a real production incident to a working AI Engineering Copilot — built entirely in Python on Google Colab with MCP tools, local LLMs, RAG, human approvals, FastAPI, Gradio, observability...",
+    "image": "https://substackcdn.com/image/fetch/$s_!YNVL!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0d235ddc-98d6-4842-815a-6ac33c76d3c1_1536x1024.png",
+    "title": "Agentic AI in Production: Build a Secure Enterprise Engineering Agent from Scratch with Python, MCP, LangGraph, RAG, Guardrails & OpenTelemetry",
+    "url": "https://stackedin.substack.com/p/agentic-ai-in-production-build-a",
+    "tags": [
+      "RAG",
+      "Python"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 3, 2026",
+    "description": "From Outlook, Teams, SharePoint and OneDrive events to a production-grade event-driven enterprise platform",
+    "image": "https://substackcdn.com/image/fetch/$s_!Uwd7!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F74f55e31-6b9d-4e16-aa7b-36d233a0ea9e_1672x941.png",
+    "title": "Microsoft Graph API, .NET 10, C# 14, Azure Service Bus, SignalR & AI + Real-Time Microsoft 365 Enterprise Intelligence Hub ",
+    "url": "https://stackedin.substack.com/p/microsoft-graph-api-net-10-c-14-azure",
+    "tags": [
+      ".NET",
+      "Azure"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Sep 2, 2026",
+    "description": "From weak learners to a strong ensemble: building an end-to-end employee attrition prediction system with AdaBoost, scikit-learn, MLflow, FastAPI, Streamlit, Docker, GitHub Actions, and Azure.",
+    "image": "https://substackcdn.com/image/fetch/$s_!TgpP!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fab226f9c-9ecd-4bc9-8eae-0b0976719177_1672x941.png",
+    "title": "AdaBoost Classification — Employee Attrition Prediction",
+    "url": "https://stackedin.substack.com/p/adaboost-classification-employee",
+    "tags": [
+      "Machine Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 30, 2026",
+    "description": "From Pixels to Perception — From Fundamentals to Production-Grade Vision AI",
+    "image": "https://substackcdn.com/image/fetch/$s_!tRpO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbf683d4f-50a9-4ec7-94fb-2657904c693f_1983x793.png",
+    "title": "Computer Vision Specialist Track 2026",
+    "url": "https://stackedin.substack.com/p/computer-vision-syllabus",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 24, 2026",
+    "description": "SQL → Advanced SQL Problem Solving → Data Modeling → PostgreSQL → Warehouses → BigQuery/Snowflake → Python for Data → Spark → dbt → Airflow → Kafka → Lakehouse → Cloud Data Engineering → Power BI",
+    "image": "https://substackcdn.com/image/fetch/$s_!NY1f!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd7c5f442-805c-409e-b7d9-56ba5656888a_1536x1024.png",
+    "title": "Data Engineering → Data Architect Mastery Roadmap",
+    "url": "https://stackedin.substack.com/p/data-engineering-mastery-1",
+    "tags": [
+      "Architecture",
+      "Data & Analytics"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 24, 2026",
+    "description": ": Python + C# with Real-World Examples",
+    "image": "https://substackcdn.com/image/fetch/$s_!0Cv7!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F53b15c80-ce86-4f75-8969-3dcab71006a5_2172x724.png",
+    "title": "Design Patterns from Zero to Architecture",
+    "url": "https://stackedin.substack.com/p/design-patterns-from-zero-to-architecture",
+    "tags": [
+      ".NET",
+      "Architecture"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 24, 2026",
+    "description": "The Role That Connects Software Engineering, AI, Cloud, and Real Business Outcomes",
+    "image": "https://substackcdn.com/image/fetch/$s_!QVVw!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6d60c94a-050d-428d-a272-ef2502268e79_1672x941.png",
+    "title": "Forward Deployed Engineer (FDE)",
+    "url": "https://stackedin.substack.com/p/forward-deployed-engineer-fde",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 22, 2026",
+    "description": "Azure × AWS × Google Cloud — AI, ML, GenAI, RAG, Agents, MLOps & Enterprise Architecture",
+    "image": "https://substackcdn.com/image/fetch/$s_!_tVY!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F69a1abd1-1965-4d77-a595-2b4db9d84325_1672x941.png",
+    "title": "☁️ The Multi-Cloud : AI Architect",
+    "url": "https://stackedin.substack.com/p/the-multi-cloud-ai-architect-part-1",
+    "tags": [
+      "Cloud",
+      "Architecture"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 21, 2026",
+    "description": "From Artificial Neurons to Your First Neural Network",
+    "image": "https://substackcdn.com/image/fetch/$s_!PD0H!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7d6b34ac-06b0-4eed-9aaf-34d5c2e509aa_1672x941.png",
+    "title": "Deep Learning Fundamentals - Part 2",
+    "url": "https://stackedin.substack.com/p/deep-learning-mastery-part-2",
+    "tags": [
+      "Machine Learning",
+      "Deep Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 20, 2026",
+    "description": "🔥 Becoming a Deep Learning Expert: PyTorch, Computer Vision, Transformers & Enterprise AI Systems",
+    "image": "https://substackcdn.com/image/fetch/$s_!4NAP!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F662ed822-8b46-4e4a-bb92-3e164efdd383_1536x1024.png",
+    "title": "Deep Learning Mastery: From Neural Networks to Production-Grade AI Systems - Part 1",
+    "url": "https://stackedin.substack.com/p/deep-learning-mastery-part-1",
+    "tags": [
+      "Machine Learning",
+      "Deep Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 19, 2026",
+    "description": "XGBoost exposes a scikit-learn-compatible estimator interface, including classification through XGBClassifier.",
+    "image": "https://substackcdn.com/image/fetch/$s_!6c7g!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F84e5bb04-ecd6-44bc-b196-03d1cd297d0d_1536x1024.png",
+    "title": "XGBoost Classification — Bank Marketing Prediction",
+    "url": "https://stackedin.substack.com/p/xgboost-classification-bank-marketing",
+    "tags": [
+      "Machine Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 19, 2026",
+    "description": "From Ensemble Learning → Fraud Probability → API → Dashboard → Docker → CI/CD → Cloud → Monitoring → Retraining",
+    "image": "https://substackcdn.com/image/fetch/$s_!8Tfi!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa2835584-2e02-402e-9da6-714f916097ec_1536x1024.png",
+    "title": "🌲 Random Forest Classifier",
+    "url": "https://stackedin.substack.com/p/random-forest-classifier",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 19, 2026",
+    "description": "FastAPI + Pydantic + MLflow Champion + Service Layer + Batch Inference + Swagger + Streamlit",
+    "image": "https://substackcdn.com/image/fetch/$s_!0cL9!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0f4e7e3c-2026-4978-9439-0037b2407955_1536x1024.png",
+    "title": "Production Model Serving : Phase 4 ",
+    "url": "https://stackedin.substack.com/p/production-model-serving-phase-4",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 19, 2026",
+    "description": "Enterprise Credit Card Fraud Detection MLOps",
+    "image": "https://substackcdn.com/image/fetch/$s_!GV--!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F648367ba-b4b3-41e2-b09a-9fb904523d2f_1672x941.png",
+    "title": "MLflow Experiment Tracking, Model Registry & Model Lifecycle - Phase 3",
+    "url": "https://stackedin.substack.com/p/mlflow-experiment-tracking-model",
+    "tags": [
+      "MLOps"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 19, 2026",
+    "description": "Git + DVC + Deterministic Pipelines + Data/Model Lineage",
+    "image": "https://substackcdn.com/image/fetch/$s_!wGqt!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4ba2f9d5-c69e-4734-8c2c-2ef3a44f169d_1672x941.png",
+    "title": "Reproducible ML Engineering : Phase 2",
+    "url": "https://stackedin.substack.com/p/phase-2-reproducible-ml-engineering",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 18, 2026",
+    "description": "From Raw Transactions → Data Validation → EDA → Feature Engineering → Multiple Models → Imbalance Handling → Cross-Validation → Hyperparameter Tuning → Threshold Optimization → Explainability → Final ",
+    "image": "https://substackcdn.com/image/fetch/$s_!RiUQ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd3fbd01a-cf41-4b91-8411-590df4deeb39_1672x941.png",
+    "title": "🏦 Enterprise Credit Card Fraud ML Foundation : Phase 01",
+    "url": "https://stackedin.substack.com/p/phase-01-enterprise-credit-card-fraud",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 18, 2026",
+    "description": "Part 1 : From Raw Data → Production ML → Continuous Training → AI Platform",
+    "image": "https://substackcdn.com/image/fetch/$s_!P5mS!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb68a580a-dfff-453b-8886-f164d4d5640e_1536x1024.png",
+    "title": "🏦 Enterprise MLOps & AI Operations ",
+    "url": "https://stackedin.substack.com/p/enterprise-mlops-and-ai-operations",
+    "tags": [
+      "MLOps"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 18, 2026",
+    "description": "Complete End-to-End ML + MLOps Project",
+    "image": "https://substackcdn.com/image/fetch/$s_!JUN8!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F85f2ef32-17bf-4bb5-a772-b19e79f718da_1672x941.png",
+    "title": "🌳 Decision Tree Classification : [ M-11 ]",
+    "url": "https://stackedin.substack.com/p/decision-tree-classification",
+    "tags": [
+      "Machine Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 18, 2026",
+    "description": "From Zero to Production MLOps with Iris Flower Classification",
+    "image": "https://substackcdn.com/image/fetch/$s_!rYc_!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc52445bd-87dc-4155-b123-ac8fd13da3f9_1536x1024.png",
+    "title": "🌸 K-Nearest Neighbors (KNN) - ML-010",
+    "url": "https://stackedin.substack.com/p/k-nearest-neighbors-knn-ml-010",
+    "tags": [
+      "Machine Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 17, 2026",
+    "description": "End-to-End Telecom Customer Churn Prediction",
+    "image": "https://substackcdn.com/image/fetch/$s_!QD6t!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe2b0d45f-61eb-4db8-8b59-63e54e924d35_1672x941.png",
+    "title": "Logistic Regression - [ ML-009 ]",
+    "url": "https://stackedin.substack.com/p/ml-009-logistic-regression",
+    "tags": [
+      "Machine Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 16, 2026",
+    "description": "Classification, Regression, Real-World Projects, MLOps, System Design, Deployment & Interview Preparation",
+    "image": "https://substack-post-media.s3.amazonaws.com/public/images/86d6271c-8394-4185-b0ef-699c1f08af06_1536x1024.png",
+    "title": "From Foundations to Production ML — The Machine Learning Algorithms Track Begins Now",
+    "url": "https://stackedin.substack.com/p/from-foundations-to-production-ml",
+    "tags": [
+      "Machine Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 15, 2026",
+    "description": "From a Business Idea → Requirements → Architecture → APIs → Data → Infrastructure → Production System",
+    "image": "https://substackcdn.com/image/fetch/$s_!scGJ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F34e28895-06ff-4fe4-b8c5-6c96334d31c6_1536x1024.png",
+    "title": "SD-001 — What Is System Design?",
+    "url": "https://stackedin.substack.com/p/sd-001-what-is-system-design",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 15, 2026",
+    "description": "From First Principles to 100+ Real-World Architectures, HLD, LLD, Distributed Systems, Cloud, Performance, Reliability, Security & AI System Design",
+    "image": "https://substackcdn.com/image/fetch/$s_!E7xz!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3497afc6-ae0c-41ae-9ba6-d2270db5930f_1672x941.png",
+    "title": "The Complete System Design Mastery",
+    "url": "https://stackedin.substack.com/p/the-complete-system-design-mastery",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 14, 2026",
+    "description": "From Matplotlib Foundations → Statistical Visualization → Better ML Decisions",
+    "image": "https://substackcdn.com/image/fetch/$s_!r40w!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F93959ddd-fcaa-4b1e-aeee-406354f726c9_1448x1086.png",
+    "title": "Seaborn for Statistical EDA",
+    "url": "https://stackedin.substack.com/p/seaborn-for-statistical-eda",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 14, 2026",
+    "description": "From Raw Numbers → Visual Patterns → Better ML Decisions",
+    "image": "https://substackcdn.com/image/fetch/$s_!Ehtp!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f201d29-4774-44dd-a77d-0fb860279021_1672x941.png",
+    "title": "Matplotlib for Machine Learning & Deep Learning",
+    "url": "https://stackedin.substack.com/p/matplotlib-for-machine-learning-and",
+    "tags": [
+      "Machine Learning",
+      "Deep Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 13, 2026",
+    "description": "From Raw Tabular Data → Clean, Model-Ready Dataset",
+    "image": "https://substackcdn.com/image/fetch/$s_!y6Zp!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4bf8a825-db1e-464e-b3c1-bbc74f9786be_1024x1536.png",
+    "title": "Pandas for Machine Learning & Deep Learning",
+    "url": "https://stackedin.substack.com/p/pandas-for-machine-learning-and-deep",
+    "tags": [
+      "Machine Learning",
+      "Deep Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 13, 2026",
+    "description": "From Python Lists to Fast Numerical Computing",
+    "image": "https://substackcdn.com/image/fetch/$s_!ie4H!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1e187ccd-8bfd-45a4-a0fd-c55f41c613ed_1024x1536.png",
+    "title": "NumPy for Machine Learning & Deep Learning",
+    "url": "https://stackedin.substack.com/p/numpy-for-machine-learning-and-deep",
+    "tags": [
+      "Machine Learning",
+      "Deep Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 13, 2026",
+    "description": "From Python Fundamentals → Advanced Concepts → ML-Ready Programming",
+    "image": "https://substackcdn.com/image/fetch/$s_!jshQ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5e165266-2c5d-4191-8438-58390ca1d649_1024x1536.webp",
+    "title": "Python for Machine Learning & Deep Learning",
+    "url": "https://stackedin.substack.com/p/python-for-machine-learning-and-deep",
+    "tags": [
+      "Machine Learning",
+      "Deep Learning",
+      "Python"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 12, 2026",
+    "description": "Building Production-Ready .NET Microservices with ConfigMaps, Secrets, Volumes, Deployments, StatefulSets, DaemonSets, Jobs & CronJobs",
+    "image": "https://substackcdn.com/image/fetch/$s_!2Jd1!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F77d1e773-c55d-4101-8ad0-6e46b4c74c0e_1536x1024.png",
+    "title": "☸️ Part 2 : Kubernetes Mastery — Workloads, Configuration & Storage",
+    "url": "https://stackedin.substack.com/p/kubernetes-mastery-workloads-configuration",
+    "tags": [
+      "RAG",
+      "DevOps"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 12, 2026",
+    "description": "A Practical Guide to Building, Deploying, Scaling, and Operating .NET Microservices on Kubernetes",
+    "image": "https://substackcdn.com/image/fetch/$s_!orCR!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcf8374c1-208a-4752-b751-b0e8299140ad_1536x1024.png",
+    "title": "☸️ Part 1 : Kubernetes Mastery — From Containers to Production-Grade .NET Microservices",
+    "url": "https://stackedin.substack.com/p/kubernetes-mastery-from-containers",
+    "tags": [
+      ".NET",
+      "DevOps"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 11, 2026",
+    "description": "Understand the Data Before You Ask a Model to Learn From It",
+    "image": "https://substackcdn.com/image/fetch/$s_!fVIZ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F120520ca-f5b1-4285-8cc0-eda6caf5ff14_1536x1024.png",
+    "title": "ML-008: Exploratory Data Analysis (EDA)",
+    "url": "https://stackedin.substack.com/p/day-12-ml-008-exploratory-data-analysis",
+    "tags": [
+      "Machine Learning",
+      "Data & Analytics"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 10, 2026",
+    "description": "From a Business Problem to a Production ML System",
+    "image": "https://substackcdn.com/image/fetch/$s_!0auc!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd0e8659b-6c49-42b5-84b4-43c60ecc8e9f_1672x941.png",
+    "title": "ML-007 — The Complete Machine Learning Workflow",
+    "url": "https://stackedin.substack.com/p/ml-007-the-complete-machine-learning",
+    "tags": [
+      "Machine Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 8, 2026",
+    "description": "Understand Data, Features, Targets, Parameters, Metrics, Overfitting, Bias & Variance — The Vocabulary Every ML Engineer Must Know",
+    "image": "https://substackcdn.com/image/fetch/$s_!FpJq!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0f8ea5cc-40e7-427e-acf5-0f3a045f3a9a_1024x1536.png",
+    "title": "ML-006 — Machine Learning Terminology: The Complete Beginner-to-Engineer Guide",
+    "url": "https://stackedin.substack.com/p/ml-006-machine-learning-terminology",
+    "tags": [
+      "Machine Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 7, 2026",
+    "description": "From Supervised Learning to Reinforcement Learning — How Machine Learning Systems Move From Data to Production",
+    "image": "https://substackcdn.com/image/fetch/$s_!S_HN!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7c2b6e99-47cc-4620-9858-76620fa5b241_1024x559.png",
+    "title": "ML-005 — Machine Learning Fundamentals Beyond the Basics",
+    "url": "https://stackedin.substack.com/p/ml-005-machine-learning-fundamentals",
+    "tags": [
+      "Machine Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 7, 2026",
+    "description": "How Computers Learn Patterns From Data Instead of Following Hard-Coded Rules",
+    "image": "https://substackcdn.com/image/fetch/$s_!GG_B!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F48d46a3e-8aef-450a-9c4d-f50e2eccb68e_1024x1536.png",
+    "title": "ML-004 — What Is Machine Learning ?",
+    "url": "https://stackedin.substack.com/p/ml-004-what-is-machine-learning",
+    "tags": [
+      "Machine Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 7, 2026",
+    "description": "From Narrow AI to Super Intelligence",
+    "image": "https://substackcdn.com/image/fetch/$s_!0lqF!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F96fd7fa6-5aec-4227-bf0f-c5efccbe6b4c_1024x1536.png",
+    "title": "ML-003 — Understanding the Types of Artificial Intelligence",
+    "url": "https://stackedin.substack.com/p/ml-003-understanding-the-types-of",
+    "tags": [
+      "Machine Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 7, 2026",
+    "description": "How 70 Years of AI History Created the Modern AI Revolution Series: 100 Days of Machine Learning & AI Engineering Phase 1 — Machine Learning Foundations Module 1 — Artificial Intelligence",
+    "image": "https://substackcdn.com/image/fetch/$s_!3ydm!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fac261929-28ff-402c-9f57-561299df1909_1149x1369.png",
+    "title": "ML-002 — The Untold Story of Artificial Intelligence: From Alan Turing to ChatGPT",
+    "url": "https://stackedin.substack.com/p/ml-002-the-untold-story-of-artificial",
+    "tags": [
+      "Machine Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 7, 2026",
+    "description": "Phase 1 — Machine Learning Foundations Module 1 — Artificial Intelligence Chapter: ML-001 — What is Artificial Intelligence?",
+    "image": "https://substackcdn.com/image/fetch/$s_!VHNA!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb481a786-d3f6-48e2-a048-7c499bc3ff6d_1536x1024.png",
+    "title": "ML-001 — What is Artificial Intelligence?",
+    "url": "https://stackedin.substack.com/p/ml-001-what-is-artificial-intelligence",
+    "tags": [
+      "Machine Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 7, 2026",
+    "description": "Enterprise Software Engineer to AI Architect : Enterprise Grade Projects",
+    "image": "https://substackcdn.com/image/fetch/$s_!hCSR!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F649a85b7-a266-4c9f-82b3-b876bb8bce69_1536x1024.png",
+    "title": "100 Days of Machine Learning & AI Engineering — Syllabus > Day 3",
+    "url": "https://stackedin.substack.com/p/100-days-of-machine-learning-and-484",
+    "tags": [
+      "Machine Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 7, 2026",
+    "description": "From Enterprise Software Engineer to AI Architect",
+    "image": "https://substackcdn.com/image/fetch/$s_!E6ji!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F676ae22c-3952-4a06-93fc-73c0565316a5_1536x1024.png",
+    "title": "100 Days of Machine Learning & AI Engineering — Syllabus > Day 2",
+    "url": "https://stackedin.substack.com/p/100-days-of-machine-learning-and-65a",
+    "tags": [
+      "Machine Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 7, 2026",
+    "description": "From Enterprise Software Engineer to AI Architect",
+    "image": "https://substackcdn.com/image/fetch/$s_!5b8Y!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4ec22aab-aef8-4ec2-af4b-f5caab90cb67_1536x1024.png",
+    "title": "100 Days of Machine Learning & AI Engineering — Syllabus > Day 2",
+    "url": "https://stackedin.substack.com/p/100-days-of-machine-learning-and-51b",
+    "tags": [
+      "Machine Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Aug 6, 2026",
+    "description": "Why I'm Starting This Journey: From Enterprise Software Engineer to AI Architect. A public learning journey documenting the transition from building enterprise software to designing production-grade A",
+    "image": "https://substackcdn.com/image/fetch/$s_!bU5h!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdf7cf8b1-f901-41aa-bc73-6604285fadde_1536x1024.png",
+    "title": "100 Days of Machine Learning & AI Engineering — Day 1",
+    "url": "https://stackedin.substack.com/p/100-days-of-machine-learning-and",
+    "tags": [
+      "Machine Learning"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Jun 2, 2026",
+    "description": "Day 1 of My AI Engineering Journey",
+    "image": "https://substackcdn.com/image/fetch/$s_!Ithm!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F48dde25e-1509-4ebd-a04f-53848566bbcb_1024x1536.png",
+    "title": "From Senior .NET Developer to AI Architect.",
+    "url": "https://stackedin.substack.com/p/from-senior-net-developer-to-ai-architect",
+    "tags": [
+      ".NET",
+      "Architecture"
+    ],
+    "paid": true
+  },
+  {
+    "date": "Apr 4, 2026",
+    "description": "A practical, step-by-step guide to mastering threads, tasks, and synchronization in modern .NET applications",
+    "image": "https://substackcdn.com/image/fetch/$s_!ggWp!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F605a2372-3892-4ad4-a644-700f270bc0c7_1400x933.jpeg",
+    "title": "🧵 Multithreading in .NET Core: Building High-Performance Applications One Thread at a Time",
+    "url": "https://stackedin.substack.com/p/multithreading-in-net-core-building",
+    "tags": [
+      ".NET"
+    ],
+    "paid": true
+  },
+  {
+    "date": "Apr 3, 2026",
+    "description": "The Retrieval Architecture Decision Guide for Modern AI Builders",
+    "image": "https://substackcdn.com/image/fetch/$s_!lukX!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffdb1406b-eff0-4b89-82b3-9126e11d6484_1672x941.png",
+    "title": "Vector RAG vs. Vectorless RAG",
+    "url": "https://stackedin.substack.com/p/vector-rag-vs-vectorless-rag",
+    "tags": [
+      "RAG"
+    ],
+    "paid": false
+  },
+  {
+    "date": "Mar 27, 2026",
+    "description": "Stop Building Dumb Chatbots — Build RAG-Powered AI That Actually Knows Your Data",
+    "image": "https://substackcdn.com/image/fetch/$s_!QzAG!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa75e1ab0-9dfa-477c-bdbb-0a181fffe2b1_1536x1024.png",
+    "title": "RAG is the Future of AI Apps — Here’s How to Build One Step-by-Step",
+    "url": "https://stackedin.substack.com/p/rag-is-the-future-of-ai-apps-heres",
+    "tags": [
+      "RAG"
+    ],
+    "paid": true
+  },
+  {
+    "date": "Mar 24, 2026",
+    "description": "A Complete Step-by-Step Guide",
+    "image": "https://substackcdn.com/image/fetch/$s_!krrm!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1dd69b7d-0a82-48e7-85cd-a6988d7e2645_820x460.gif",
+    "title": "Building a Production-Ready Azure Service Bus Topic in .NET Core",
+    "url": "https://stackedin.substack.com/p/building-a-production-ready-azure",
+    "tags": [
+      ".NET",
+      "Azure"
+    ],
+    "paid": true
+  },
+  {
+    "date": "Mar 23, 2026",
+    "description": "A Practical Guide with Azure Service Bus & .NET Core",
+    "image": "https://substackcdn.com/image/fetch/$s_!C97H!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F59bf1d55-27ab-4266-ab47-c1257c535a2f_1536x1024.png",
+    "title": "🚀 Queues vs Topics in Messaging Frameworks",
+    "url": "https://stackedin.substack.com/p/queues-vs-topics-in-messaging-frameworks",
+    "tags": [
+      "AI & Engineering"
+    ],
+    "paid": true
+  }
+]

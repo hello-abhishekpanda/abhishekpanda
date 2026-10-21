@@ -1,0 +1,239 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Deep Learning Handbook Chapter 2: Python, NumPy, broadcasting, vectorization, matrix multiplication, PyTorch, and worked mathematical labs."><title>02 · Python, NumPy &amp; Tensor Programming | Deep Learning Handbook</title><style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#080b11;--panel:#101722;--panel2:#161f2c;--line:#2b3441;--ink:#eef1ef;--muted:#a3aeb8;--accent:#b7ef8a;--cyan:#7cded9;--orange:#eebb7b}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.73 'DM Sans',system-ui,sans-serif}h1,h2,h3,h4{font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.17;letter-spacing:-.04em}h1{font-size:clamp(3.1rem,7vw,6.1rem);margin:.35em 0}h2{font-size:clamp(1.8rem,3.4vw,2.65rem);margin:0 0 19px}h3{font-size:1.35rem;margin:28px 0 12px}p{color:#cad3dc}a{color:var(--cyan)}a:hover{color:var(--accent)}.mono,.eyebrow,pre,code,.nav,.toc,.tiny,.tag{font-family:'DM Mono',monospace}.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.71rem;color:var(--accent)}.tiny{font-size:.7rem;color:var(--muted)}.nav{height:65px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,4vw,70px);position:sticky;top:0;background:#090d12ef;backdrop-filter:blur(12px);z-index:20;font-size:.78rem}.nav a{text-decoration:none;color:var(--ink)}.nav b{color:var(--accent)}.nav .links{display:flex;gap:24px}.page{max-width:1440px;margin:auto;display:grid;grid-template-columns:248px minmax(0,850px);gap:50px;padding:0 36px}.toc{position:sticky;top:88px;align-self:start;height:calc(100vh - 110px);overflow:auto;border-right:1px solid var(--line);padding:22px 25px 20px 0;font-size:.75rem}.toc a{display:block;text-decoration:none;padding:9px 8px;color:#a6b0ba;border-left:2px solid transparent}.toc a:hover,.toc a.active{color:var(--accent);border-left-color:var(--accent);background:#b7ef8a09}.progress{height:5px;background:#252f3b;border-radius:10px;overflow:hidden;margin-top:14px}.progress span{display:block;height:100%;background:var(--accent);width:0}.main{min-width:0;padding-bottom:100px}.hero{padding:95px 0 75px;border-bottom:1px solid var(--line)}.hero .lead{font-size:1.18rem;max-width:740px}.hero em{font-style:normal;color:var(--accent)}.meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.tag{font-size:.72rem;border:1px solid #455044;padding:6px 11px;border-radius:5px;color:#c2d8bc}.section{padding:76px 0 18px;scroll-margin-top:70px;border-bottom:1px solid #222b35}.section:last-child{border:0}.sectionnum{font:12px 'DM Mono',monospace;color:var(--accent);margin-bottom:13px}.note,.callout{background:var(--panel);border-left:3px solid var(--accent);padding:20px 24px;margin:26px 0;border-radius:0 10px 10px 0}.note p,.callout p{margin:5px 0}.note strong{color:var(--accent)}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:25px 0}.card{border:1px solid var(--line);border-radius:12px;padding:20px;background:var(--panel)}.card h3{margin:8px 0;font-size:1.2rem}.card p{font-size:.91rem;margin:0}.card small{color:var(--accent);font:11px 'DM Mono',monospace}.figure{background:linear-gradient(135deg,#101822,#0b1118);border:1px solid var(--line);border-radius:15px;padding:23px;margin:24px 0;overflow:hidden}.figure figcaption{color:var(--muted);font-size:.83rem;margin-top:14px}.figure svg{max-width:100%;height:auto;display:block;margin:auto}.eq{padding:23px;text-align:center;background:#111923;border:1px solid #344050;margin:22px 0;border-radius:10px;color:#e3f5df;font-size:1.12rem;overflow-x:auto}.eq small{display:block;color:var(--muted);font:11px 'DM Mono',monospace;margin-bottom:10px;text-align:left}.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}.step{display:flex;gap:17px;margin:18px 0}.bubble{width:33px;height:33px;flex:none;border:1px solid var(--accent);border-radius:50%;text-align:center;line-height:31px;color:var(--accent);font-family:'DM Mono';font-size:.81rem}.step p{margin:0}.code{margin:24px 0;border:1px solid #354251;border-radius:12px;overflow:hidden;background:#0b111a}.codebar{padding:12px 17px;display:flex;justify-content:space-between;gap:10px;background:#16202b;color:#bdc9d4;font:12px 'DM Mono',monospace;align-items:center}.copy,button{cursor:pointer;font:12px 'DM Mono',monospace}.copy{border:1px solid #47576b;border-radius:5px;background:transparent;color:var(--ink);padding:7px 11px}.copy:hover{border-color:var(--accent);color:var(--accent)}pre{margin:0;padding:22px;overflow:auto;line-height:1.75;font-size:13px;tab-size:4;color:#e9e8d8}pre .comment{color:#81a88a}pre .key{color:#f1af8c}pre .str{color:#e9d18f}.control{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:12px 0;color:#d3dde3}.control label{min-width:145px}.control input[type=range]{accent-color:var(--accent);flex:1;min-width:140px}.control output{color:var(--accent);font:13px 'DM Mono',monospace;min-width:48px}.simulation{background:#121c27;padding:19px;border:1px solid #384657;border-radius:12px;margin:25px 0}.simulation canvas{width:100%;max-height:320px;display:block}.simulation p{font-size:.86rem}.btn{border:1px solid var(--accent);background:var(--accent);color:#10170c;padding:10px 15px;border-radius:6px;font-weight:bold}.btn.secondary{background:transparent;color:var(--accent)}.statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{background:#0d141d;padding:12px;border:1px solid #29394b;border-radius:7px}.stat span{display:block;font:10px 'DM Mono';color:var(--muted)}.stat strong{font:18px 'DM Mono';color:var(--accent)}.checklist label{display:flex;gap:12px;align-items:start;padding:13px;border-bottom:1px solid #2a3440}.checklist input{accent-color:var(--accent);margin-top:6px}.accordion details{border:1px solid var(--line);border-radius:9px;margin:8px 0;padding:13px 16px;background:var(--panel)}.accordion summary{cursor:pointer;font-weight:600}.accordion details p{margin:13px 0 0}.footer{margin-top:75px;padding:30px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.footer a{margin-right:20px}.flowline{stroke-dasharray:6 10;animation:dash 2s linear infinite}@keyframes dash{to{stroke-dashoffset:-64}}.pulse{animation:pulse 2.3s ease-in-out infinite}@keyframes pulse{50%{opacity:.35;transform:scale(.92)}}.sr{position:absolute;left:-9999px}@media(max-width:960px){.page{display:block;padding:0 23px}.toc{position:static;height:auto;display:flex;gap:8px;overflow:auto;white-space:nowrap;border-right:0;border-bottom:1px solid var(--line);padding:10px 0}.toc .toclabel,.toc .progress{display:none}.toc a{border-left:0;border-bottom:2px solid transparent;flex:none}.hero{padding:55px 0}.nav .links{gap:9px}.cards{grid-template-columns:1fr}.split{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
+
+
+:root{--purple:#c7b6ff} .assembly{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0}.assembly>div{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:18px}.assembly strong{color:var(--accent)}.assembly .mini{font:11px 'DM Mono',monospace;color:var(--cyan);letter-spacing:.07em}.matrix{display:inline-grid;grid-template-columns:repeat(var(--cols),minmax(30px,1fr));gap:5px;vertical-align:middle}.cell{min-width:37px;min-height:37px;display:flex;align-items:center;justify-content:center;font:14px 'DM Mono',monospace;background:#233143;border:1px solid #42556b;border-radius:5px;transition:.25s}.cell.hot{background:#456d48;border-color:var(--accent);color:white}.mathline{font:clamp(15px,2.7vw,24px) 'DM Mono',monospace;background:#101722;border:1px solid #304253;border-radius:10px;padding:18px;overflow:auto;color:#eff5e8;margin:18px 0}.mathline .a{color:var(--accent)}.mathline .b{color:var(--cyan)}.lab{background:linear-gradient(135deg,#111b27,#0e1720);border:1px solid #354757;border-radius:14px;padding:23px;margin:25px 0}.lab h3{margin-top:0}.lab-row{display:flex;gap:18px;align-items:center;flex-wrap:wrap}.lab label{font:12px 'DM Mono',monospace;color:#a6c3ca}.lab input[type=range]{accent-color:#b7ef8a;width:200px;max-width:100%}.lab select,.lab button,.quiz button{background:#172536;border:1px solid #405368;color:#e7f2ed;border-radius:7px;padding:9px 12px;font:12px 'DM Mono',monospace;cursor:pointer}.lab button:hover,.quiz button:hover{border-color:var(--accent)}.lab .result{background:#0c111a;padding:15px;border-radius:9px;margin-top:12px;overflow:auto}.lab svg{width:100%;height:auto;display:block}.caption{font:12px 'DM Mono',monospace;color:#98a8b6;margin-top:12px}.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.annotated{border:1px solid #3a4b5c;background:#101722;padding:16px;border-radius:9px}.annotated .label{font:11px 'DM Mono',monospace;color:var(--accent)}.codewrap{background:#0d111a;border:1px solid #344154;border-radius:12px;margin:19px 0;overflow:hidden}.codehead{background:#182231;border-bottom:1px solid #344154;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;font:12px 'DM Mono',monospace;color:#b8c8d1}.codewrap pre{padding:20px 19px;overflow:auto;margin:0;font:13px/1.65 'DM Mono',monospace;color:#e7f1d8;tab-size:4}.codewrap pre code{white-space:pre}.codewrap button{background:#203545;border:1px solid #4c687b;color:#e9f4fa;border-radius:6px;cursor:pointer;padding:7px 11px;font:11px 'DM Mono',monospace}.codewrap button:hover{border-color:var(--accent)}.quiz{border:1px solid var(--line);padding:16px;margin:12px 0;border-radius:9px}.quiz .answer{display:none;padding-top:10px;color:#c5d5c6}.quiz.show .answer{display:block}.reference{padding:11px 0;border-bottom:1px solid #293440}.reference a{font-weight:600}.vis-steps{list-style:none;counter-reset:steps;padding:0}.vis-steps li{counter-increment:steps;border-left:2px solid #526e76;margin-left:12px;padding:5px 0 20px 25px;position:relative}.vis-steps li:before{content:counter(steps);position:absolute;left:-13px;top:0;background:var(--accent);color:#091009;border-radius:50%;font:12px 'DM Mono';width:24px;height:24px;display:grid;place-items:center}.sim-output{font:13px 'DM Mono',monospace;color:var(--cyan)}@media(max-width:760px){.assembly,.cols2{grid-template-columns:1fr}.lab{padding:14px}.matrix .cell{min-width:26px;min-height:30px;font-size:11px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style></head><body>
+<div class="nav"><a href="handbook.html"><b>◈</b> DEEP LEARNING HANDBOOK</a><div class="links"><a class="home-nav-link" href="index.html" title="Home" aria-label="Return to the technology guides home"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Home</span></a><a href="chapter-01-introduction.html">← CH 01</a><a href="handbook.html">SYLLABUS</a><span style="color:var(--accent)">CH 02 / 22</span></div></div><div style="position:fixed;top:65px;left:0;width:100%;height:3px;background:transparent;z-index:22"><div id="reading" style="background:var(--accent);width:0;height:100%"></div></div>
+<div class="page"><aside class="toc"><div class="eyebrow">CHAPTER NAVIGATION</div><a href="#mental-model">Why numbers?</a><a href="#python">Python building blocks</a><a href="#shapes">Array shapes</a><a href="#broadcast">Broadcasting</a><a href="#matmul">Matrix multiplication</a><a href="#vectorize">Vectorization & axes</a><a href="#stability">Numerical stability</a><a href="#layer">Build a dense layer</a><a href="#project">End-to-end project</a><a href="#debug">Debugging</a><a href="#practice">Exercises & interview</a><a href="#resources">Official references</a><div style="margin-top:25px"><div class="tiny">BOOK 01 · FOUNDATIONS</div><div class="progress"><span style="width:9%"></span></div><p class="tiny">02 / 22 chapters</p></div></aside><main class="main"><header class="hero"><div class="eyebrow">PART 01 / DEEP LEARNING FOUNDATIONS · CHAPTER 02</div><h1>Python, <em>NumPy</em><br>&amp; Tensor Programming.</h1><p class="lead">Unpack the operations inside a neural network. Understand each number, shape and multiplication by hand—then assemble them into fast NumPy and PyTorch code.</p><div class="meta"><span class="tag">LEVEL · BASIC → INTERMEDIATE</span><span class="tag">12 LESSON SECTIONS</span><span class="tag">INTERACTIVE VISUAL LABS</span><span class="tag">COPYABLE PYTHON</span></div><div style="margin-top:35px" class="callout"><strong>Learning method:</strong> Real-world example → mathematical meaning → disassemble the operation → animate it → implement from scratch → reassemble in PyTorch → debug → interview.</div></header><section class="section" id="mental-model"><div class="sectionnum">01 / CHAPTER 02</div><h2>Why arrays are the language of neural networks</h2><p>A deep learning model does not see a photograph as a dog or a sentence as a thought. It sees <strong>numbers arranged in shapes</strong>. Layers transform those numbers through mathematical operations. Our goal is to open these operations, inspect their moving parts, then rebuild them correctly.</p><div class="assembly"><div><div class="mini">01 · DISASSEMBLE</div><strong>One student</strong><p>Hours studied: 2<br>Attendance: 0.8<br>Assignments: 5</p></div><div><div class="mini">02 · ORGANIZE</div><strong>Vector</strong><div class="mathline">x = [2, 0.8, 5]</div><p>Three numbers describe one record.</p></div><div><div class="mini">03 · REASSEMBLE</div><strong>Batch</strong><div class="mathline">X ∈ ℝ<sup>3×3</sup></div><p>Three records, each containing three features.</p></div></div><div class="callout"><strong>Everyday analogy.</strong> A spreadsheet has rows for people and columns for properties. A neural network reads essentially the same grid as a numeric matrix.</div></section><section class="section" id="python"><div class="sectionnum">02 / CHAPTER 02</div><h2>Python primitives → reusable model components</h2><p>Before using neural-network frameworks, understand why we use functions, loops and classes. Python lists store objects; adding two lists concatenates them rather than adding elements.</p><div class="codewrap"><div class="codehead"><span>PYTHON · LISTS VS ARRAYS</span><button class="copy" type="button">COPY CODE ↗</button></div><pre><code>import numpy as np  # Fast operations over numerical arrays
+
+first = [1, 2, 3]
+second = [4, 5, 6]
+print(first + second)  # [1,2,3,4,5,6]: list concatenation
+
+x = np.array(first, dtype=np.float64)  # Make numeric arrays
+y = np.array(second, dtype=np.float64)
+print(x + y)  # [5. 7. 9.]: element-wise addition
+
+def predict(hours: float, weight: float, bias: float) -&gt; float:
+    # Express the mathematical rule y_hat = w*x + b
+    return weight * hours + bias
+
+class LinearPredictor:
+    def __init__(self, weight: float, bias: float):
+        self.weight = weight  # Store model parameter
+        self.bias = bias      # Store intercept
+
+    def forward(self, x):
+        return self.weight * x + self.bias
+
+model = LinearPredictor(weight=5.0, bias=30.0)
+print(model.forward(6))  # 60.0</code></pre></div><div class="cols2"><div class="annotated"><div class="label">DISASSEMBLE</div><p><code>__init__</code> prepares persistent state. <code>forward</code> computes a result. The object remembers the parameters between calls.</p></div><div class="annotated"><div class="label">REASSEMBLE</div><p>PyTorch’s <code>nn.Module</code> builds on the same class pattern, adding parameter registration, training modes, and other framework behavior.</p></div></div></section><section class="section" id="shapes"><div class="sectionnum">03 / CHAPTER 02</div><h2>Tensors: dimensions, axes and shapes</h2><p>A <strong>scalar</strong> is one number. A <strong>vector</strong> is a one-dimensional array. A <strong>matrix</strong> is two-dimensional. “Tensor” is the general name for an array with any number of axes.</p><div class="mathline">scalar: ( ) &nbsp; vector: (3,) &nbsp; matrix: (2,3) &nbsp; batch: (32,10)</div><p>Read <code>(32,10)</code> as <strong>32 records × 10 features per record</strong>. Always write shapes before writing operations.</p><div class="lab"><h3>Live lab · Shape transformer</h3><p>Select a target shape. Watch the same 12 numbered values rearrange without gaining or losing elements.</p><div class="lab-row"><label for="shapeChoice">SHAPE</label><select id="shapeChoice"><option value="1,12">(1, 12)</option><option value="2,6">(2, 6)</option><option value="3,4" selected>(3, 4)</option><option value="4,3">(4, 3)</option><option value="2,2,3">(2, 2, 3)</option></select></div><div class="result" id="shapeView" aria-live="polite"></div><div class="caption">Reshaping preserves total element count: product(dimensions) = 12. Shape controls interpretation, not the element values.</div></div><div class="codewrap"><div class="codehead"><span>PYTHON · ARRAY INSPECTION AND RESHAPE</span><button class="copy" type="button">COPY CODE ↗</button></div><pre><code>import numpy as np
+
+x = np.arange(12)  # Integers 0 through 11
+print(x.ndim)       # 1: number of axes
+print(x.shape)      # (12,): lengths of the axes
+print(x.size)       # 12: total elements
+print(x.dtype)      # Usually int64 or int32, platform-dependent
+
+matrix = x.reshape(3, 4)  # 3 rows, 4 columns
+print(matrix)
+print(matrix[0, :])     # First row (four values)
+print(matrix[:, 1])     # Second column (three values)
+print(matrix.mean(axis=0))  # Column means, shape (4,)
+print(matrix.mean(axis=1))  # Row means, shape (3,)
+
+# Common bug: (3,) minus (3,1) broadcasts into (3,3).
+y_hat = np.array([1, 2, 3])
+y = np.array([[1], [2], [3]])
+print((y_hat - y).shape)  # (3,3), NOT (3,)</code></pre></div></section><section class="section" id="broadcast"><div class="sectionnum">04 / CHAPTER 02</div><h2>Broadcasting: one rule reused across a batch</h2><p><strong>Disassemble:</strong> Each of three students receives the same two-feature bias. Instead of writing a loop, NumPy lines up dimensions from the right. An aligned pair is compatible if its sizes are equal or one is 1. Missing leading axes behave as though their size is 1.</p><div class="mathline"><span class="a">(3, 2)</span> + <span class="b">(  2)</span> ⟶ (3, 2)</div><div class="lab"><h3>Live lab · Broadcasting the bias</h3><p>Change the two bias values. See every row update, and compare the repeated bias with the output.</p><div class="lab-row"><label>Bias 1 <input id="bias1" type="range" min="-5" max="15" value="10" step="1"><span id="bv1">10</span></label><label>Bias 2 <input id="bias2" type="range" min="-5" max="15" value="5" step="1"><span id="bv2">5</span></label></div><div class="result" id="broadcastView"></div><div class="caption">This is a conceptual visualization, not the creation of a physically repeated bias matrix. Broadcasting often avoids copying values.</div></div><p><strong>Reassemble:</strong> This is exactly how a neural network applies a single learned bias vector to every sample in a batch.</p><div class="codewrap"><div class="codehead"><span>PYTHON · BROADCASTING BY EXAMPLE</span><button class="copy" type="button">COPY CODE ↗</button></div><pre><code>import numpy as np
+
+X = np.array([[1, 2], [3, 4], [5, 6]])  # Shape (3,2)
+b = np.array([10, 5])                   # Shape (2,)
+print(X + b)   # Add bias to every row: shape (3,2)
+
+# Shapes are compared from the right, not from the left.
+A = np.ones((4, 1))  # Shape (4,1)
+B = np.array([1, 2, 3])  # Shape (3,)
+print((A + B).shape)  # (4,3)
+
+# Incompatible rightmost dimensions 3 and 4 lead to an error.
+# np.ones((2,3)) + np.ones((4,))</code></pre></div></section><section class="section" id="matmul"><div class="sectionnum">05 / CHAPTER 02</div><h2>Matrix multiplication: unroll every multiply and add</h2><p>Element-wise multiplication and matrix multiplication mean different things. A single matrix multiplication output cell is a <strong>dot product</strong>: take one row, take one column, multiply corresponding entries, then add the products.</p><div class="mathline">C<sub>i,j</sub> = Σ<sub>k</sub> A<sub>i,k</sub> × B<sub>k,j</sub></div><div class="lab"><h3>Animated lab · Open the dot product</h3><p>Step through the computation of <code>[[1,2],[3,4]] @ [[5,6],[7,8]]</code>. Each click reveals one component of the selected cell.</p><div class="lab-row"><button id="matNext" type="button">NEXT MULTIPLICATION →</button><button id="matReset" type="button">RESET</button><label><input type="checkbox" id="matAuto"> AUTO PLAY</label></div><div id="matView" class="result"></div><div class="caption" id="matCaption" aria-live="polite"></div></div><p>For a mini-batch of 32 students, 10 inputs and a layer with 5 neurons, matrix multiplication is <code>(32,10) @ (10,5) → (32,5)</code>. The middle dimensions must match.</p><div class="codewrap"><div class="codehead"><span>PYTHON · MATRIX MULTIPLICATION, THEN VECTORIZATION</span><button class="copy" type="button">COPY CODE ↗</button></div><pre><code>import numpy as np
+
+def matmul_from_scratch(A, B):
+    # Assumes nonempty rectangular lists of numbers.
+    rows_a, cols_a = len(A), len(A[0])
+    rows_b, cols_b = len(B), len(B[0])
+    if cols_a != rows_b:
+        raise ValueError(&quot;Inner dimensions must match&quot;)
+    out = [[0.0] * cols_b for _ in range(rows_a)]
+    for i in range(rows_a):          # Pick output row
+        for j in range(cols_b):      # Pick output column
+            for k in range(cols_a):  # Walk across row and column
+                out[i][j] += A[i][k] * B[k][j]
+    return out
+
+A = [[1, 2], [3, 4]]
+B = [[5, 6], [7, 8]]
+print(matmul_from_scratch(A, B))  # [[19,22],[43,50]]
+print(np.array(A) @ np.array(B))  # Same result using NumPy</code></pre></div></section><section class="section" id="vectorize"><div class="sectionnum">06 / CHAPTER 02</div><h2>Vectorization and reduction: replacing loops with intent</h2><p>Instead of telling Python <em>how</em> to visit every number, tell NumPy <em>what operation</em> to perform on the array. This reduces interpreter overhead and often uses compiled routines.</p><div class="cols2"><div class="annotated"><div class="label">PYTHON LOOP</div><p>Visit each input, multiply, add, append. Readable, but repeated interpreter work for large batches.</p></div><div class="annotated"><div class="label">NUMPY OPERATION</div><p><code>prediction = 3 * X + 2</code> expresses the computation over the entire array.</p></div></div><div class="mathline">mean(X, axis=0) → one result per column<br>mean(X, axis=1) → one result per row</div><p>For a <code>(3,2)</code> table, reducing axis 0 gives shape <code>(2,)</code>. Reducing axis 1 gives shape <code>(3,)</code>. <code>keepdims=True</code> preserves reduced dimensions at size one, which often makes later broadcasting easier.</p><div class="codewrap"><div class="codehead"><span>PYTHON · VECTORIZE AND REDUCE</span><button class="copy" type="button">COPY CODE ↗</button></div><pre><code>import numpy as np
+
+X = np.array([[70, 80], [60, 90], [85, 95]], dtype=float)
+print(X.mean(axis=0))  # Mean for each exam: shape (2,)
+print(X.mean(axis=1))  # Mean for each student: shape (3,)
+
+column_means = X.mean(axis=0, keepdims=True)  # (1,2)
+centered = X - column_means  # Broadcast mean to each student
+print(centered.shape)  # (3,2)
+
+values = np.arange(1_000_000, dtype=float)
+result = 3 * values + 2  # Vectorized linear prediction</code></pre></div></section><section class="section" id="stability"><div class="sectionnum">07 / CHAPTER 02</div><h2>Numerical stability: when correct math fails in a computer</h2><p>Mathematics assumes ideal real numbers. Computers use finite precision. For large inputs, the expression <code>exp(x)</code> may overflow. Stable formulas use algebra to avoid dangerous intermediate values.</p><h3>Disassemble softmax</h3><div class="mathline">softmax(zᵢ) = e<sup>zᵢ</sup> / Σ<sub>j</sub> e<sup>zⱼ</sup></div><p>For logits <code>[1000, 1001, 1002]</code>, direct exponentiation overflows in common floating-point formats. Subtract the largest value, 1002, from every logit. The probability distribution remains unchanged, because the common exponential factor cancels.</p><div class="mathline">softmax(zᵢ) = e<sup>zᵢ − m</sup> / Σ<sub>j</sub> e<sup>zⱼ − m</sup></div><div class="lab"><h3>Live lab · Stable softmax probabilities</h3><label>Common offset to all logits: <span id="offsetVal">0</span></label><input type="range" id="offset" min="0" max="1200" step="100" value="0"><div id="softView" class="result"></div><div class="caption">Moving all logits equally should not change the probabilities. A naive exponential implementation becomes unstable for sufficiently large offsets.</div></div><div class="codewrap"><div class="codehead"><span>PYTHON · STABLE SOFTMAX</span><button class="copy" type="button">COPY CODE ↗</button></div><pre><code>import numpy as np
+
+def stable_softmax(logits, axis=-1):
+    logits = np.asarray(logits, dtype=np.float64)
+    shifted = logits - logits.max(axis=axis, keepdims=True)
+    exponentials = np.exp(shifted)  # Largest exponential is 1
+    return exponentials / exponentials.sum(axis=axis, keepdims=True)
+
+logits = np.array([[1000,1001,1002], [1,2,3]])
+probs = stable_softmax(logits, axis=1)
+print(probs)             # Both rows have identical probabilities
+print(probs.sum(axis=1)) # [1., 1.]
+
+# For classification training in PyTorch, pass raw logits to
+# torch.nn.CrossEntropyLoss; do NOT pre-apply softmax.</code></pre></div></section><section class="section" id="layer"><div class="sectionnum">08 / CHAPTER 02</div><h2>Reassemble the pieces into one neural-network layer</h2><p>Everything now fits into a single expression. Take a batch <code>X</code>, multiply by weights <code>W</code>, add a bias <code>b</code>, and apply ReLU:</p><div class="mathline">Z = X @ W + b &nbsp;→&nbsp; A = max(0, Z)</div><ol class="vis-steps"><li><strong>Input:</strong> Each row is one example, each column one feature. <code>X.shape = (3,3)</code>.</li><li><strong>Weights:</strong> Four output units each connect to three inputs. Our NumPy convention is <code>W.shape = (3,4)</code>.</li><li><strong>Multiply:</strong> <code>X @ W</code> forms four weighted combinations per example, shape <code>(3,4)</code>.</li><li><strong>Bias:</strong> Add <code>b.shape = (4,)</code> to every row using broadcasting.</li><li><strong>Activation:</strong> ReLU changes negative outputs to zero. Shape stays <code>(3,4)</code>.</li></ol><div class="callout"><strong>Boundary of this lesson:</strong> A forward pass is not training. To learn, the layer also needs a loss, gradients, and parameter updates (covered deeply in later chapters).</div><div class="codewrap"><div class="codehead"><span>PYTHON · ONE DENSE LAYER — NUMPY</span><button class="copy" type="button">COPY CODE ↗</button></div><pre><code>import numpy as np
+
+class DenseReLU:
+    def __init__(self, input_features, output_features, seed=42):
+        rng = np.random.default_rng(seed)  # Independent random generator
+        # He-style scale: often suitable for ReLU layers
+        self.W = rng.normal(0, np.sqrt(2 / input_features),
+                            size=(input_features, output_features))
+        self.b = np.zeros(output_features)  # A bias for each output unit
+
+    def forward(self, X):
+        Z = X @ self.W + self.b    # Linear transform; bias broadcasts
+        return np.maximum(0, Z)   # Element-wise ReLU activation
+
+X = np.array([[2., .8, 5.], [4., .9, 7.], [6., .95, 9.]])
+layer = DenseReLU(3, 4)
+output = layer.forward(X)
+print(output.shape)  # (3,4)
+print(output)</code></pre></div><div class="codewrap"><div class="codehead"><span>PYTHON · SAME LAYER — PYTORCH</span><button class="copy" type="button">COPY CODE ↗</button></div><pre><code>import torch
+from torch import nn
+
+torch.manual_seed(42)
+X = torch.tensor([[2., .8, 5.], [4., .9, 7.], [6., .95, 9.]])
+model = nn.Sequential(
+    nn.Linear(3, 4),  # Three input features, four output units
+    nn.ReLU()         # Rectified linear activation
+)
+out = model(X)
+print(out.shape)   # torch.Size([3, 4])
+
+# PyTorch stores Linear weights as (out_features, in_features).
+# So model[0].weight.shape == (4,3), not (3,4).
+print(model[0].weight.shape)
+
+# This is a forward pass. There is NO training loop here.</code></pre></div></section><section class="section" id="project"><div class="sectionnum">09 / CHAPTER 02</div><h2>Mini-project: train student-score regression end to end</h2><p>We will build a small synthetic regression model from scratch. Features are study hours, attendance fraction, and completed assignments. The target is generated from a known formula plus noise, so we can verify the learning algorithm without claiming it predicts real academic performance.</p><div class="mathline">ŷ = Xw + b<br>L = (1/N) · Σ(ŷ − y)²</div><h3>Break down the gradients</h3><p>Write the error vector <code>e = Xw + b − y</code>. MSE differentiates into:</p><div class="mathline">∂L/∂w = (2/N) Xᵀe<br>∂L/∂b = (2/N) Σe</div><p>Read the weight formula as “collect the error contributed by each feature across all samples.” The transpose aligns the samples with the feature dimension. We will derive this rigorously in the calculus chapter.</p><div class="codewrap"><div class="codehead"><span>PYTHON · COMPLETE NUMPY REGRESSION PROJECT</span><button class="copy" type="button">COPY CODE ↗</button></div><pre><code>import numpy as np
+rng = np.random.default_rng(42)
+
+# 1. Synthetic data: 500 students, 3 explanatory variables
+n = 500
+X = np.column_stack([
+    rng.uniform(0, 10, n),       # Study hours
+    rng.uniform(.5, 1.0, n),     # Attendance fraction
+    rng.integers(0, 11, n)      # Completed assignments
+])
+y = X @ np.array([4., 20., 1.5]) + 10 + rng.normal(0, 2, n)
+
+# 2. Hold-out split: evaluate on data never used for optimization
+order = rng.permutation(n)
+train_idx, test_idx = order[:400], order[400:]
+X_train, X_test = X[train_idx], X[test_idx]
+y_train, y_test = y[train_idx], y[test_idx]
+
+# 3. Standardize with train statistics ONLY to prevent leakage
+mu = X_train.mean(axis=0)
+sigma = X_train.std(axis=0)
+sigma = np.where(sigma == 0, 1, sigma)  # Guard zero-variance columns
+X_train = (X_train - mu) / sigma
+X_test = (X_test - mu) / sigma
+
+# 4. Start with a deliberately untrained linear model
+w = np.zeros(X_train.shape[1])
+b = 0.0
+lr = 0.05
+
+# 5. Repeatedly predict → measure error → calculate gradients → update
+for epoch in range(1200):
+    predictions = X_train @ w + b
+    error = predictions - y_train
+    loss = np.mean(error ** 2)
+
+    dw = (2 / len(X_train)) * (X_train.T @ error)
+    db = 2 * error.mean()
+    w -= lr * dw
+    b -= lr * db
+
+    if epoch % 300 == 0:
+        print(f&quot;epoch={epoch:4d}, train_mse={loss:.4f}&quot;)
+
+# 6. Evaluation happens after training, on held-out examples
+predictions_test = X_test @ w + b
+test_mse = np.mean((predictions_test - y_test) ** 2)
+print(&quot;Test MSE:&quot;, round(test_mse, 4))
+
+# 7. The learned weights are in standardized feature coordinates
+print(&quot;Standardized coefficients:&quot;, w)
+print(&quot;Intercept in standardized coordinates:&quot;, b)</code></pre></div><div class="codewrap"><div class="codehead"><span>PYTHON · EQUIVALENT PYTORCH MODEL</span><button class="copy" type="button">COPY CODE ↗</button></div><pre><code>import torch
+from torch import nn
+
+# Run the NumPy project first; X_train, X_test, y_train, y_test exist.
+torch.manual_seed(42)
+train_x = torch.tensor(X_train, dtype=torch.float32)
+train_y = torch.tensor(y_train, dtype=torch.float32).reshape(-1, 1)
+test_x = torch.tensor(X_test, dtype=torch.float32)
+test_y = torch.tensor(y_test, dtype=torch.float32).reshape(-1, 1)
+
+model = nn.Linear(3, 1)            # Register trainable weight and bias
+loss_fn = nn.MSELoss()             # Mean squared error
+optimizer = torch.optim.SGD(model.parameters(), lr=0.05)
+
+for epoch in range(1200):
+    model.train()                   # Enter training mode
+    prediction = model(train_x)    # Forward pass
+    loss = loss_fn(prediction, train_y)
+    optimizer.zero_grad()          # Clear gradient values from last step
+    loss.backward()                # Calculate derivatives via autograd
+    optimizer.step()               # Move parameters against gradients
+
+model.eval()                       # Evaluation mode
+with torch.no_grad():             # Disable gradient tracking for inference
+    test_mse = loss_fn(model(test_x), test_y)
+print(&quot;PyTorch test MSE:&quot;, test_mse.item())</code></pre></div></section><section class="section" id="debug"><div class="sectionnum">10 / CHAPTER 02</div><h2>Debugging: diagnose broken shapes and learning</h2><p>A model running without errors does not prove that its mathematics is correct. The most dangerous bugs are silent: unintended broadcasts, data leakage, incorrect target dimensions, or numerical instability.</p><div class="assembly"><div><div class="mini">SYMPTOM</div><strong>Loss shape (N,N)</strong><p>Prediction is (N,), target is (N,1).</p></div><div><div class="mini">CAUSE</div><strong>Broadcasting</strong><p>Two axes expand and compare every prediction against every target.</p></div><div><div class="mini">FIX</div><strong>Align shapes</strong><p>Make both arrays (N,) or both (N,1), intentionally.</p></div></div><div class="codewrap"><div class="codehead"><span>PYTHON · DEFENSIVE ASSERTIONS</span><button class="copy" type="button">COPY CODE ↗</button></div><pre><code>import numpy as np
+
+def checked_mse(prediction, target):
+    # Do not let broadcasting silently change the meaning of the loss.
+    if prediction.shape != target.shape:
+        raise ValueError(f&quot;Shape mismatch: {prediction.shape} vs {target.shape}&quot;)
+    if not np.isfinite(prediction).all():
+        raise ValueError(&quot;Prediction contains NaN or infinity&quot;)
+    if not np.isfinite(target).all():
+        raise ValueError(&quot;Target contains NaN or infinity&quot;)
+    return np.mean((prediction - target) ** 2)
+
+print(checked_mse(np.array([1.,2.]), np.array([1.5,2.5])))</code></pre></div></section><section class="section" id="practice"><div class="sectionnum">11 / CHAPTER 02</div><h2>Practice lab: your implementation checklist</h2><p>Before moving on, try these without consulting the solutions above. Tick completed items; the page remembers them in this browser.</p><div id="checklist" class="lab"></div><h3>Self-test: explain it like an engineer</h3><div class="quiz"><strong>1. Why can an array of shape (3,) subtract an array of shape (3,1), and why is the result often surprising?</strong><br><button type="button" class="reveal">SHOW EXPLANATION</button><div class="answer">Broadcasting compares rightmost axes: (1,3) and (3,1) expand to (3,3). Use explicit shape checking when comparing predictions against targets.</div></div><div class="quiz"><strong>2. What shape is (32,10) @ (10,5), and what does each axis represent?</strong><br><button type="button" class="reveal">SHOW EXPLANATION</button><div class="answer">(32,5): there are 32 examples, each producing 5 output features. The contracted axis of length 10 represents input features.</div></div><div class="quiz"><strong>3. Why does nn.Linear(3,4) store a weight of shape (4,3)?</strong><br><button type="button" class="reveal">SHOW EXPLANATION</button><div class="answer">PyTorch stores linear-layer weights as (out_features,in_features) and computes an equivalent of X @ W.T + b.</div></div><div class="quiz"><strong>4. Why can softmax([1000,1001,1002]) overflow, and what is the stable fix?</strong><br><button type="button" class="reveal">SHOW EXPLANATION</button><div class="answer">Exp(1000) exceeds common floating-point ranges. Subtract the row maximum before exponentiating; softmax is invariant to a common shift.</div></div><div class="quiz"><strong>5. What is the difference between forward computation and learning?</strong><br><button type="button" class="reveal">SHOW EXPLANATION</button><div class="answer">The forward pass produces predictions from current parameters. Learning requires an objective, gradient computation, and parameter updates using training data.</div></div></section><section class="section" id="resources"><div class="sectionnum">12 / CHAPTER 02</div><h2>Primary documentation &amp; what to read next</h2><p>The handbook’s explanations are original, but these official references are the source of truth for current array and framework behavior.</p><div class="reference"><a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener">Python Tutorial ↗</a><br><span class="tiny">Functions, classes and exceptions</span></div><div class="reference"><a href="https://numpy.org/doc/stable/user/quickstart.html" target="_blank" rel="noopener">NumPy Quickstart ↗</a><br><span class="tiny">Dimensions, indexing, vectorized array operations</span></div><div class="reference"><a href="https://numpy.org/doc/stable/user/basics.broadcasting.html" target="_blank" rel="noopener">NumPy Broadcasting Rules ↗</a><br><span class="tiny">Shape alignment and efficient arithmetic</span></div><div class="reference"><a href="https://docs.pytorch.org/tutorials/beginner/basics/tensorqs_tutorial.html" target="_blank" rel="noopener">PyTorch Tensor Tutorial ↗</a><br><span class="tiny">Tensor operations, shapes and devices</span></div><div class="reference"><a href="https://docs.pytorch.org/tutorials/beginner/basics/autogradqs_tutorial.html" target="_blank" rel="noopener">PyTorch Autograd Tutorial ↗</a><br><span class="tiny">Gradients and automatic differentiation</span></div><div class="reference"><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Linear.html" target="_blank" rel="noopener">PyTorch Linear Layer ↗</a><br><span class="tiny">Dense-layer definition and weight convention</span></div><div class="callout"><strong>What comes next?</strong> Chapter 03 — Linear Algebra. We will derive dot products, linear transformations, vector norms and matrix properties so the operations in this chapter become mathematically intuitive.</div><p><a href="handbook.html">← Return to handbook syllabus</a> &nbsp; · &nbsp; <a href="chapter-01-introduction.html">← Revisit Chapter 01</a></p></section><footer style="padding-top:40px"><a href="handbook.html">← Handbook homepage</a> &nbsp; · &nbsp; <a href="chapter-01-introduction.html">Previous: Chapter 01</a><p class="tiny">Chapter 02 · Part 01 · Deep Learning Handbook</p></footer></main></div><script>
+const $=id=>document.getElementById(id);
+document.querySelectorAll('.codewrap .copy').forEach(btn=>btn.addEventListener('click',async()=>{const s=btn.closest('.codewrap').querySelector('code').innerText;try{await navigator.clipboard.writeText(s);btn.textContent='COPIED ✓'}catch(e){const t=document.createElement('textarea');t.value=s;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();btn.textContent='COPIED ✓'}setTimeout(()=>btn.textContent='COPY CODE ↗',1600)}));
+document.querySelectorAll('.reveal').forEach(b=>b.addEventListener('click',()=>{const q=b.closest('.quiz');q.classList.toggle('show');b.textContent=q.classList.contains('show')?'HIDE EXPLANATION':'SHOW EXPLANATION'}));
+function matrix(rows, cols, values, active){let s=`<div class="matrix" style="--cols:${cols}">`;for(let i=0;i<rows*cols;i++)s+=`<span class="cell ${active&&active.includes(i)?'hot':''}">${values[i]}</span>`;return s+'</div>'}
+function shapeLab(){const dims=$('shapeChoice').value.split(',').map(Number),v=Array.from({length:12},(_,i)=>i),rows=dims.length===2?dims[0]:dims[0]*dims[1],cols=dims[dims.length-1];$('shapeView').innerHTML=`<div class="lab-row">${matrix(rows,cols,v)}<div><strong>Shape: (${dims.join(', ')})</strong><br><span class="tiny">ndim = ${dims.length}<br>size = 12<br>${dims.length===3?'Visualized as stacked slices':'Rows × columns'}</span></div></div>`} $('shapeChoice').addEventListener('change',shapeLab);shapeLab();
+function broadcastLab(){let a=+$('bias1').value,b=+$('bias2').value; $('bv1').textContent=a;$('bv2').textContent=b;const X=[1,2,3,4,5,6];const output=X.map((v,i)=>v+(i%2?b:a));$('broadcastView').innerHTML=`<div class="lab-row" style="justify-content:space-around"><div><div class="tiny">INPUT X (3 × 2)</div>${matrix(3,2,X)}</div><span>+</span><div><div class="tiny">BIAS (2,)</div>${matrix(1,2,[a,b])}</div><span>=</span><div><div class="tiny">RESULT (3 × 2)</div>${matrix(3,2,output)}</div></div>`}['bias1','bias2'].forEach(id=>$(id).addEventListener('input',broadcastLab));broadcastLab();
+const A=[1,2,3,4],B=[5,6,7,8];let phase=0;let timer=null;
+function matLab(){const cell=Math.floor(phase/2),k=phase%2,i=Math.floor(cell/2),j=cell%2;const vals=[19,22,43,50],cvals=vals.map((v,idx)=>idx<cell?v:idx===cell?(k===0?A[2*i]*B[j]:v):'·');$('matView').innerHTML=`<div class="lab-row" style="justify-content:space-around"><div><div class="tiny">A (2×2)</div>${matrix(2,2,A,[2*i+k])}</div><span>×</span><div><div class="tiny">B (2×2)</div>${matrix(2,2,B,[2*k+j])}</div><span>=</span><div><div class="tiny">C (2×2)</div>${matrix(2,2,cvals,[cell])}</div></div>`;let first=A[2*i]*B[j],second=A[2*i+1]*B[2+j];$('matCaption').textContent=`C[${i},${j}]: ${k===0?`${A[2*i]} × ${B[j]} = ${first}. Now add the second product.`:`${first} + ${A[2*i+1]} × ${B[2+j]} = ${first+second}. Cell complete.`}`;} $('matNext').addEventListener('click',()=>{phase=(phase+1)%8;matLab()});$('matReset').addEventListener('click',()=>{phase=0;matLab()});$('matAuto').addEventListener('change',e=>{if(timer)clearInterval(timer);timer=e.target.checked?setInterval(()=>{phase=(phase+1)%8;matLab()},1400):null});matLab();
+function softLab(){const v=+$('offset').value;$('offsetVal').textContent=v;const shifted=[-2,-1,0],raw=shifted.map(x=>Math.exp(x)),sum=raw.reduce((a,b)=>a+b),p=raw.map(x=>x/sum);$('softView').innerHTML=`<div class="tiny">Logits: [${v}, ${v+1}, ${v+2}] · Subtract max = ${v+2}</div><div class="tiny">Stable logits: [-2,-1,0]</div><div style="display:flex;gap:7px;height:28px;margin-top:15px">${p.map((n,i)=>`<div title="Class ${i}: ${(n*100).toFixed(2)}%" style="background:${['#547f9c','#6bb4ad','#b7ef8a'][i]};width:${n*100}%;border-radius:4px"></div>`).join('')}</div><div class="tiny">Probabilities: [${p.map(x=>x.toFixed(4)).join(', ')}] · sum = 1.0000</div>`} $('offset').addEventListener('input',softLab);softLab();
+const todo=['Write element-wise vector addition using only Python loops.','Explain shape, ndim and size from an array you invented.','Predict broadcast output shapes without running code.','Implement a 2×2 matrix multiplication by hand.','Explain axis=0 vs axis=1 using a student grade table.','Implement stable softmax and verify row sums equal 1.','Implement one NumPy dense ReLU forward pass.','Run the student regression project and inspect test MSE.','Run the equivalent PyTorch model and explain every optimizer step.','Debug a deliberate prediction/target shape mismatch.'];let done=[];try{done=JSON.parse(localStorage.getItem('dl-handbook-ch2-progress')||'[]')}catch(e){}function checklist(){const count=todo.filter((_,i)=>done.includes(i)).length;$('checklist').innerHTML=`<strong>${count}/${todo.length} completed</strong><div style="height:5px;background:#263544;border-radius:6px;margin:12px 0"><div style="background:var(--accent);height:100%;width:${count/todo.length*100}%;border-radius:6px"></div></div>`+todo.map((t,i)=>`<label style="display:flex;gap:10px;align-items:flex-start;padding:7px 0;text-transform:none;letter-spacing:normal"><input type="checkbox" data-task="${i}" ${done.includes(i)?'checked':''} style="margin-top:5px;accent-color:#b7ef8a"><span style="color:#dce6e6">${t}</span></label>`).join('');$('checklist').querySelectorAll('input').forEach(el=>el.addEventListener('change',e=>{const i=+e.target.dataset.task;done=e.target.checked?[...new Set([...done,i])]:done.filter(x=>x!==i);try{localStorage.setItem('dl-handbook-ch2-progress',JSON.stringify(done))}catch(e){}checklist()}))} checklist();
+const sections=document.querySelectorAll('section.section');const toc=[...document.querySelectorAll('.toc a')];const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){toc.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}})},{rootMargin:'-12% 0px -70% 0px'});sections.forEach(s=>io.observe(s));window.addEventListener('scroll',()=>{$('reading').style.width=Math.min(100,(window.scrollY/(document.documentElement.scrollHeight-innerHeight))*100)+'%'},{passive:true});
+</script></body></html>
