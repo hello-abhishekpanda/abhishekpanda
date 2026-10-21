@@ -1,56 +1,77 @@
-# Abhishek Panda
+# Abhishek Panda — Enterprise AI Solution Architect
 
-The production source for [abhishekpanda.com](https://www.abhishekpanda.com): a Next.js portfolio, engineering blog archive, and self-contained AI learning library.
+The source for [abhishekpanda.com](https://www.abhishekpanda.com): a responsive portfolio, engineering blog, and visual learning library for AI, Azure, and AWS architecture.
 
-## Public routes
+## What’s included
 
-- `/` — portfolio home
-- `/guide` — learning guide and curriculum hub
-- `/blogs` — searchable static blog archive
-- `/contact` — contact and social links
-- `/learning/*.html` — standalone curriculum chapters and cloud guides
+- Professional portfolio, career timeline, client context, and downloadable CV
+- Searchable engineering blog archive and contact page
+- AI/ML curriculum plus standalone Azure and AWS service guides
+- Responsive Guide navigation with Azure and AWS dropdown links
+- A persistent light/dark theme shared by the portfolio and learning pages
+- SEO metadata, Open Graph image, sitemap, robots file, and web manifest
 
-The site has no database, authentication system, cron jobs, or required environment variables.
+## Routes
 
-## Local development
+| Route | Purpose |
+| --- | --- |
+| `/` | Portfolio and professional experience |
+| `/blogs` | Engineering blog archive |
+| `/contact` | Contact information and social links |
+| `/guide` | Redirect to the AI Solution Architect curriculum |
+| `/learning/index.html` | Technology-guides home |
+| `/learning/ai-solution-architect-curriculum.html` | AI/ML curriculum |
+| `/learning/azure-services.html` | Azure services and .NET learning path |
+| `/learning/aws-services.html` | AWS services and .NET learning path |
 
-Install Node.js 20.9 or newer and pnpm 11, then run:
+## Run locally
+
+Requirements: Node.js 20.9+ and pnpm 11+.
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-Open `http://localhost:3000`.
+Open [http://localhost:3000](http://localhost:3000).
 
-Before publishing, verify the same commands Vercel will use:
+## Quality checks
+
+Run these checks before pushing changes:
 
 ```bash
 pnpm typecheck
 pnpm lint
 pnpm build
+```
+
+Preview the production build locally with:
+
+```bash
 pnpm start
 ```
 
-## Deploy to Vercel
+## Deploy on Vercel
 
-1. Push this folder to `https://github.com/hello-abhishekpanda/abhishekpanda`.
-2. In Vercel, import that GitHub repository.
-3. Keep the detected **Next.js** framework preset and repository root (`.`).
-4. Keep the default install, build, and output settings. No environment variables are needed.
-5. Add `abhishekpanda.com` and `www.abhishekpanda.com` under Project → Settings → Domains.
+This project is configured for Vercel’s **Next.js** preset. No environment variables, database, or additional build configuration are required.
 
-Vercel will run `pnpm build` and serve the Next.js application. Navigation uses root-relative links, so every page also works when opened or refreshed directly.
+1. Import `hello-abhishekpanda/abhishekpanda` into Vercel, or keep the existing linked project.
+2. Use repository root `.` and the default detected settings.
+3. Confirm `main` is the Production Branch under **Settings → Environments → Production**.
+4. Push to `main`; Vercel creates a production deployment automatically.
+5. Add `abhishekpanda.com` and `www.abhishekpanda.com` under **Settings → Domains**.
 
-## Main content files
+To manually deploy a specific Git revision, open **Deployments → Create Deployment**, enter the `main` branch or a commit SHA, and select **Create Deployment**.
 
-- `app/portfolio.tsx` — shared shell, navigation, and home page
-- `app/guide-hub.tsx` — guide landing page
-- `app/contact-page.tsx` — contact page
+## Main project files
+
+- `app/portfolio.tsx` — portfolio shell, navigation, theme switcher, and career timeline
+- `app/data.ts` — professional history and portfolio data
+- `app/globals.css` — responsive layout, theme, navigation, and visual styles
 - `app/blog-catalog.tsx` and `app/posts.json` — blog archive
-- `app/data.ts` — professional history and profile content
-- `app/globals.css` — responsive visual system
-- `public/learning/` — curriculum and guide pages
+- `app/contact-page.tsx` — contact page
+- `app/layout.tsx` — shared metadata and early theme initialization
+- `public/learning/` — curriculum and standalone service-guide pages
 - `public/Abhishek-Panda-CV-2026.pdf` — downloadable CV
 
-Update the site in this folder only; generated `.next` output and installed `node_modules` remain ignored by Git.
+Generated `.next` output and installed dependencies are intentionally excluded from Git.
