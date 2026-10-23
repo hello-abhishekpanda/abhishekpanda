@@ -51,6 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
+        <script dangerouslySetInnerHTML={{ __html: `(()=>{const key='ap-legacy-cache-cleanup-v1';try{if(sessionStorage.getItem(key)==='done')return;sessionStorage.setItem(key,'done');const controlled=!!navigator.serviceWorker?.controller;const workers='serviceWorker'in navigator?navigator.serviceWorker.getRegistrations().then(items=>Promise.all(items.map(item=>item.unregister()))):Promise.resolve();const stored='caches'in window?caches.keys().then(keys=>Promise.all(keys.map(name=>caches.delete(name)))):Promise.resolve();Promise.allSettled([workers,stored]).then(()=>{if(controlled)location.reload()})}catch{}})()` }} />
         <script dangerouslySetInnerHTML={{ __html: `try{const theme=localStorage.getItem('ap-theme');if(theme==='light'||theme==='dark'){document.documentElement.dataset.theme=theme;document.documentElement.classList.toggle('dark',theme==='dark')}}catch{}` }} />
         {children}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
