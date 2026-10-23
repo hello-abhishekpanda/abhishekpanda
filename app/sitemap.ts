@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const learningPages = [
     '/learning/index.html',
     '/learning/ai-solution-architect-curriculum.html',
+    '/learning/dotnet-solution-architect.html',
     '/learning/handbook.html',
     '/learning/chapter-01-introduction.html',
     '/learning/chapter-02-python-numpy.html',

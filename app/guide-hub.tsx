@@ -21,6 +21,15 @@ const library = [
     meta: ['15 connected parts', 'Interactive visual lab', 'Saved progress'],
   },
   {
+    title: '.NET Solution Architect Curriculum',
+    label: 'C# 14 · .NET 10 · AZURE',
+    description: 'Go from language and CLR foundations to APIs, microservices, observability, Azure delivery, and production AI integration.',
+    href: '/learning/dotnet-solution-architect.html',
+    icon: Code2,
+    tone: 'violet',
+    meta: ['48 modules', '24 animated flows', '422 topics'],
+  },
+  {
     title: 'Deep Learning Handbook',
     label: 'FOUNDATIONS · PART I',
     description: 'A practical handbook for building intuition through mathematics, PyTorch, projects, and interview preparation.',
@@ -86,7 +95,7 @@ export default function GuideHub() {
       </div>
 
       <div className="guide-proof" aria-label="Learning library highlights">
-        <span><strong>08</strong> interactive experiences</span>
+        <span><strong>09</strong> interactive experiences</span>
         <span><strong>03</strong> deep learning chapters</span>
         <span><strong>02</strong> cloud field guides</span>
         <span><strong>01</strong> connected learning path</span>

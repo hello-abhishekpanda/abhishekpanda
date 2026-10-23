@@ -20,6 +20,7 @@
   const pageTitles = {
     'index.html': 'Technology Guides',
     'ai-solution-architect-curriculum.html': 'AI Solution Architect Curriculum',
+    'dotnet-solution-architect.html': '.NET Solution Architect Curriculum',
     'azure-services.html': 'Azure Services Guide',
     'aws-services.html': 'AWS Services Guide',
     'handbook.html': 'Deep Learning Handbook',
@@ -94,7 +95,7 @@
         <header class="header">
           <div class="row">
             <a class="brand" href="/" aria-label="Abhishek Panda home"><img src="/profile.png" alt=""><span class="identity"><strong>Abhishek Panda</strong><small>Enterprise AI Solution Architect</small></span></a>
-            <nav class="primary" id="primary" aria-label="Primary navigation"><a href="/">Home</a><details class="guide-menu"><summary aria-label="Open guide navigation">Guide</summary><div class="guide-menu-panel"><a href="/learning/ai-solution-architect-curriculum.html"${currentFile === 'ai-solution-architect-curriculum.html' ? ' aria-current="page"' : ''}>AI / ML curriculum</a><a href="/learning/azure-services.html"${currentFile === 'azure-services.html' ? ' aria-current="page"' : ''}>Azure services</a><a href="/learning/aws-services.html"${currentFile === 'aws-services.html' ? ' aria-current="page"' : ''}>AWS services</a></div></details><a href="/blogs">Blogs</a><a href="/contact">Contact</a></nav>
+            <nav class="primary" id="primary" aria-label="Primary navigation"><a href="/">Home</a><details class="guide-menu"><summary aria-label="Open guide navigation">Guide</summary><div class="guide-menu-panel"><a href="/learning/ai-solution-architect-curriculum.html"${currentFile === 'ai-solution-architect-curriculum.html' ? ' aria-current="page"' : ''}>AI / ML curriculum</a><a href="/learning/dotnet-solution-architect.html"${currentFile === 'dotnet-solution-architect.html' ? ' aria-current="page"' : ''}>.NET architect curriculum</a><a href="/learning/azure-services.html"${currentFile === 'azure-services.html' ? ' aria-current="page"' : ''}>Azure services</a><a href="/learning/aws-services.html"${currentFile === 'aws-services.html' ? ' aria-current="page"' : ''}>AWS services</a></div></details><a href="/blogs">Blogs</a><a href="/contact">Contact</a></nav>
             <button class="theme" type="button" aria-label="Switch theme" title="Switch theme"></button><a class="talk" href="mailto:hello@abhishekpanda.com">Let’s talk ↗</a>
             <button class="toggle" type="button" aria-label="Open navigation menu" aria-controls="primary" aria-expanded="false">☰</button>
           </div>
@@ -143,5 +144,9 @@
   customElements.define('ap-site-footer', APSiteFooter);
   document.body.prepend(document.createElement('ap-site-header'));
   document.body.append(document.createElement('ap-site-footer'));
+  const auditLink = document.createElement('a');
+  auditLink.href = '/audit.html';
+  auditLink.textContent = 'Website quality audit';
+  document.querySelector('ap-site-footer').shadowRoot.querySelector('.nav').append(auditLink);
   document.documentElement.classList.add('ap-shell-ready');
 }());

@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
@@ -36,6 +37,7 @@ import Emphasis from './emphasis';
 import logos from './logos.json';
 import postsData from './posts.json';
 import techIcons from './tech-icons.json';
+import profileImage from '../public/profile.png';
 
 const nav = [
   ['home', 'Home', Home, '/'],
@@ -51,6 +53,26 @@ const pageContext = {
 } as const;
 
 const blogPosts = postsData as BlogPost[];
+
+const themeChangeEvent = 'ap-theme-change';
+
+function getThemeSnapshot(): 'light' | 'dark' {
+  const savedTheme = window.localStorage.getItem('ap-theme');
+  if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function subscribeToTheme(onStoreChange: () => void) {
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  window.addEventListener(themeChangeEvent, onStoreChange);
+  window.addEventListener('storage', onStoreChange);
+  mediaQuery.addEventListener('change', onStoreChange);
+  return () => {
+    window.removeEventListener(themeChangeEvent, onStoreChange);
+    window.removeEventListener('storage', onStoreChange);
+    mediaQuery.removeEventListener('change', onStoreChange);
+  };
+}
 
 function Github({ size = 18 }: { size?: number }) {
   return <img src="/tech/github.svg" width={size} height={size} alt="" />;
@@ -110,6 +132,7 @@ function Navigation({ page, onNavigate, mobile = false }: { page: string; onNavi
           </summary>
           <div className="guide-nav-popover">
             <a href={href} onClick={onNavigate}><BookOpen aria-hidden="true" /><span><strong>AI / ML curriculum</strong><small>Architecture learning path</small></span></a>
+            <a href="/learning/dotnet-solution-architect.html" onClick={onNavigate}><Braces aria-hidden="true" /><span><strong>.NET architect curriculum</strong><small>C# 14 · .NET 10 · Azure</small></span></a>
             <a href="/learning/azure-services.html" onClick={onNavigate}><Cloud aria-hidden="true" /><span><strong>Azure services</strong><small>Microsoft cloud guide</small></span></a>
             <a href="/learning/aws-services.html" onClick={onNavigate}><Network aria-hidden="true" /><span><strong>AWS services</strong><small>Amazon cloud guide</small></span></a>
           </div>
@@ -146,7 +169,7 @@ function Capsule({ text, compact = false }: { text: string; compact?: boolean })
                     : Wrench;
   const iconPath = (techIcons as Record<string, string>)[text];
   const icon = iconPath
-    ? <img className="tech-icon" src={iconPath} alt="" />
+    ? <img className="tech-icon" src={iconPath} alt="" loading="lazy" decoding="async" />
     : <Concept className="concept-icon" size={18} />;
 
   if (compact) {
@@ -171,6 +194,8 @@ function Brand({ name, id }: { name: string; id: string }) {
       <img
         src={(logos as Record<string, string>)[id]}
         alt={name}
+        loading="lazy"
+        decoding="async"
         onError={(event) => {
           event.currentTarget.style.display = 'none';
           event.currentTarget.nextElementSibling?.removeAttribute('hidden');
@@ -210,12 +235,22 @@ function HomePage({ expandedCompanies, toggleCompany }: { expandedCompanies: str
           <p className="intro">Hi, I’m <strong>Abhishek Panda.</strong> An <strong>Enterprise AI Solution Architect</strong> designing secure, scalable, multi-cloud AI platforms and intelligent enterprise solutions.</p>
           <div className="hero-actions">
             <a className="btn primary" href="#experience">Explore my work <ArrowUpRight size={18} /></a>
-            <a className="btn secondary" href="/Abhishek-Panda-CV-2026.pdf" download>Download CV <Download size={17} /></a>
+            <a className="btn secondary" href="/AbhishekPanda_CV.pdf" download>Download CV <Download size={17} /></a>
           </div>
           <div className="hero-details"><span><MapPin size={14} /> Bengaluru, India</span><span>AI · Cloud · Enterprise Architecture</span></div>
         </div>
         <div className="profile-card">
-          <div className="portrait-bg"><img src="/profile.png" alt="Abhishek Panda" className="portrait" /></div>
+          <div className="portrait-bg">
+            <Image
+              src={profileImage}
+              alt="Abhishek Panda"
+              className="portrait"
+              fill
+              sizes="(max-width: 800px) 350px, (max-width: 1150px) 280px, 365px"
+              quality={75}
+              preload
+            />
+          </div>
           <div className="profile-info">
             <h2>Abhishek Panda <span className="verified"><Check size={13} /></span></h2>
             <p className="profile-designation">Enterprise AI Solution Architect</p>
@@ -322,12 +357,7 @@ export default function Portfolio() {
   const [pageLabel, pageDescription] = pageContext[page as keyof typeof pageContext] || pageContext.home;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedCompanies, setExpandedCompanies] = useState<string[]>([]);
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    if (typeof window === 'undefined') return 'light';
-    const savedTheme = window.localStorage.getItem('ap-theme');
-    if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  });
+  const theme = useSyncExternalStore(subscribeToTheme, getThemeSnapshot, () => 'light');
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -338,17 +368,12 @@ export default function Portfolio() {
     return () => { document.body.style.overflow = ''; };
   }, [mobileMenuOpen]);
 
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-  }, [theme]);
-
   function toggleTheme() {
     const nextTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(nextTheme);
     window.localStorage.setItem('ap-theme', nextTheme);
     document.documentElement.dataset.theme = nextTheme;
     document.documentElement.classList.toggle('dark', nextTheme === 'dark');
+    window.dispatchEvent(new Event(themeChangeEvent));
   }
 
   function toggleCompany(company: string) {
@@ -367,7 +392,7 @@ export default function Portfolio() {
         <header className="topbar">
           <div className="topbar-inner">
             <Link className="header-brand" href="/" aria-label="Abhishek Panda home">
-              <img src="/profile.png" alt="" />
+              <Image src={profileImage} alt="" width={44} height={44} sizes="44px" quality={75} />
               <span>Abhishek Panda<small>Enterprise AI Solution Architect</small></span>
             </Link>
             <Navigation page={page} />
@@ -407,8 +432,9 @@ export default function Portfolio() {
           {content}
           <footer className="site-footer">
             <div className="site-footer-top">
-              <div className="site-footer-profile"><img src="/profile.png" alt="Abhishek Panda" /><span><strong>Abhishek Panda</strong><small>Enterprise AI Solution Architect · Bengaluru, India</small></span></div>
+              <div className="site-footer-profile"><Image src={profileImage} alt="Abhishek Panda" width={54} height={54} sizes="54px" quality={75} /><span><strong>Abhishek Panda</strong><small>Enterprise AI Solution Architect · Bengaluru, India</small></span></div>
               <nav className="site-footer-nav" aria-label="Footer navigation">
+                <a href="/audit.html">Website quality audit</a>
                 {nav.map(([id, label, , href]) => id === 'guide' ? <a href={href} key={id}>{label}</a> : <Link href={href} key={id}>{label}</Link>)}
               </nav>
             </div>

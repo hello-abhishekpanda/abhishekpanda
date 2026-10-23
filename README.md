@@ -21,6 +21,7 @@ The source for [abhishekpanda.com](https://www.abhishekpanda.com): a responsive 
 | `/guide` | Redirect to the AI Solution Architect curriculum |
 | `/learning/index.html` | Technology-guides home |
 | `/learning/ai-solution-architect-curriculum.html` | AI/ML curriculum |
+| `/learning/dotnet-solution-architect.html` | C# 14, .NET 10, Azure, and AI architecture curriculum |
 | `/learning/azure-services.html` | Azure services and .NET learning path |
 | `/learning/aws-services.html` | AWS services and .NET learning path |
 
@@ -72,6 +73,6 @@ To manually deploy a specific Git revision, open **Deployments → Create Deploy
 - `app/contact-page.tsx` — contact page
 - `app/layout.tsx` — shared metadata and early theme initialization
 - `public/learning/` — curriculum and standalone service-guide pages
-- `public/Abhishek-Panda-CV-2026.pdf` — downloadable CV
+- `public/AbhishekPanda_CV.pdf` — downloadable CV
 
 Generated `.next` output and installed dependencies are intentionally excluded from Git.
